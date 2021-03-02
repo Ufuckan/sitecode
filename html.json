@@ -1,0 +1,132 @@
+[
+    {
+        "kodlar": {
+            "Rhythm Site": {
+                "isim": "Unity ",
+                "id": "0Dcie629h7",
+                "desc": "Unity  ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/icons/806917768355381318/a9bc20a01349bcb99b760bbf23b63260.webp",
+                "main_code": "https://glitch.com/edit/#!/marnel-ryhthm-site",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-ryhthm-site",
+                "kod_rank": "html",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Kabals Site": {
+                "isim": "Kabals Site",
+                "id": "6q9eiJiz2Z",
+                "desc": "Kabals Site Altyapısı ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/icons/806917768355381318/a9bc20a01349bcb99b760bbf23b63260.webp",
+                "main_code": "https://glitch.com/edit/#!/marnel-kabals",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-kabals",
+                "kod_rank": "html",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Spotify Site": {
+                "isim": "Spotify Site",
+                "id": "Il5aMgK9v6",
+                "desc": "Spotify Site Altyapısı ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-spotify",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-spotify",
+                "kod_rank": "html",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Sohbet Sitesi": {
+                "isim": "Sohbet Sitesi",
+                "id": "UXYRfsZUdH",
+                "desc": "Online Sohbet Site Altyapısı ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-sohbet",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-sohbet",
+                "kod_rank": "html",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Bot Site": {
+                "isim": "Bot Site",
+                "id": "9FveoJuwcH",
+                "desc": "Kolay Bot Site Altyapısı ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/yilmazbotsite",
+                "komutlar_code": "https://glitch.com/edit/#!/yilmazbotsite",
+                "kod_rank": "html",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Gnarge Site": {
+                "isim": "Gnarge Site",
+                "id": "A2diwh1nSQ",
+                "desc": "Gnarge Site Altyapısı ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/yilmaz-bot-web-site",
+                "komutlar_code": "https://glitch.com/edit/#!/yilmaz-bot-web-site",
+                "kod_rank": "html",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Hastebin Site": {
+                "isim": "Hastebin Site",
+                "id": "8tG1Kl4Cap",
+                "desc": "Hastebin Site Altyapısı ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnelcodeshare",
+                "komutlar_code": "https://glitch.com/edit/#!/marnelcodeshare",
+                "kod_rank": "html",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Nitro Gen Site": {
+                "isim": "Nitro Gen Site",
+                "id": "SB5Iwf3MQN",
+                "desc": "Nitro Generatör Site Altyapısı ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/baskan-nitro",
+                "komutlar_code": "https://glitch.com/edit/#!/baskan-nitro",
+                "kod_rank": "html",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Mcat Site": {
+                "isim": "Mcat Site",
+                "id": "TnvLNQpOBO",
+                "desc": "Mcat Site Altyapısı ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/baskan-mcat-site",
+                "komutlar_code": "https://glitch.com/edit/#!/baskan-mcat-site",
+                "kod_rank": "html",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            }
+        }
+    }
+]

@@ -1,0 +1,230 @@
+[
+    {
+        "kodlar": {
+            "Uptime Bot": {
+                "isim": "Uptime Bot",
+                "id": "f4UNbh2cFN",
+                "desc": "Uptime Bot Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-uptime",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-uptime",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Zira Bot": {
+                "isim": "Zira Bot",
+                "id": "IVUr8IhxVB",
+                "desc": "Zira Bot Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-zira",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-zira",
+                "kod_rank": "hazir",
+                "k_adi": "Ufqy",
+                "date": "12/29/2020"
+            },
+            "Vortex Bot": {
+                "isim": "Vortex Bot",
+                "id": "eTGWuef7wL",
+                "desc": "Vortex Bot Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-vortex",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-vortex",
+                "kod_rank": "hazir",
+                "k_adi": "Ufqy",
+                "date": "12/29/2020"
+            },
+            "Xenon Bot": {
+                "isim": "Xenon Bot",
+                "id": "WLR7pqFTYG",
+                "desc": "Xenon Bot Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-xenon",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-xenon",
+                "kod_rank": "hazir",
+                "k_adi": "Ufqy",
+                "date": "12/29/2020"
+            },
+            "Boş Altyapı ": {
+                "isim": "Boş Altyapı ",
+                "id": "HnUSGwusBo",
+                "desc": "V12 Boş Altyapı ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-bos-v12",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-bos-v12",
+                "kod_rank": "hazir",
+                "k_adi": "Ufqy",
+                "date": "12/29/2020"
+            },
+            "Members+ Bot": {
+                "isim": "Members+ Bot",
+                "id": "cR5uyav8Hg",
+                "desc": "Members+ Bot Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-members",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-members",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Rhythm Bot": {
+                "isim": "Rhythm Bot",
+                "id": "9YnNG2uUPT",
+                "desc": "Rhythm Bot Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-rythm",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-rythm",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Logo Botu": {
+                "isim": "Logo Botu",
+                "id": "YL71d7brfk",
+                "desc": "Logo Botu Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/baskan-logo",
+                "komutlar_code": "https://glitch.com/edit/#!/baskan-logo",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Kayıt Botu": {
+                "isim": "Kayıt Botu",
+                "id": "pFbDimHBtu",
+                "desc": "Kayıt Botu Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/baskan-kayit",
+                "komutlar_code": "https://glitch.com/edit/#!/baskan-kayit",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Çekiliş Botu": {
+                "isim": "Çekiliş Botu",
+                "id": "DY2YnDXIWU",
+                "desc": "Çekiliş Botu Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/baskan-cekilis",
+                "komutlar_code": "https://glitch.com/edit/#!/baskan-cekilis",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Pirate Bot": {
+                "isim": "Pirate Bot",
+                "id": "OfiJuacBbS",
+                "desc": "Pirate Bot Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-pirate",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-pirate",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Kod Paylaşım Botu": {
+                "isim": "Kod Paylaşım Botu",
+                "id": "DkxNloIa7E",
+                "desc": "Kod Paylaşım Bot Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/baskan-kodbot",
+                "komutlar_code": "https://glitch.com/edit/#!/baskan-kodbot",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Botlist Bot": {
+                "isim": "Botlist Bot",
+                "id": "mSSJghdDSc",
+                "desc": "Botlist Botu Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/baskan-botlist",
+                "komutlar_code": "https://glitch.com/edit/#!/baskan-botlist",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Gnarge Bot": {
+                "isim": "Gnarge Bot",
+                "id": "ekiuXBte3b",
+                "desc": "Gnarge Bot Altyapısı ",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://glitch.com/edit/#!/marnel-gnarge",
+                "komutlar_code": "https://glitch.com/edit/#!/marnel-gnarge",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Lydia Bot": {
+                "isim": "Lydia Bot",
+                "id": "l1Yqusr2kk",
+                "desc": "Lydia Bot Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://github.com/YigitOnline/lydiaaltyap-",
+                "komutlar_code": "https://github.com/YigitOnline/lydiaaltyap-",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Gloss Bot": {
+                "isim": "Gloss Bot",
+                "id": "jxuwbToSwz",
+                "desc": "Gloss Bot Altyapısı",
+                "modules": [
+                    "Gerekli Modüller Yüklü "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "https://github.com/TheClawNz/gloss",
+                "komutlar_code": "https://github.com/TheClawNz/gloss",
+                "kod_rank": "hazir",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            }
+        }
+    }
+]

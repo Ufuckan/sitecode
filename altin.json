@@ -1,0 +1,121 @@
+[
+    {
+        "kodlar": {
+            "V12 Nuke": {
+                "isim": "V12 Nuke",
+                "id": "nVKi5DhXKZ",
+                "desc": "Kanala Nuke Atar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message, args) => {\r\nmessage.channel.clone().then(knl => {\r\n  let position = message.channel.position;\r\n  knl.setPosition(position);\r\n  message.channel.delete();\r\n});\r\n  \r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [\"nuke\",\"nuk\",\"nk\"],\r\n  permLevel: 3\r\n};\r\n\r\nexports.help = {\r\n    name: 'nuke',\r\n  description: 'belirtilen kanalı siler tekrar oluşturu işte',\r\n  usage: 'nuke'\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "altin",
+                "k_adi": "Ufqy",
+                "date": "12/30/2020"
+            },
+            "V12 Rolver": {
+                "isim": "V12 Rolver",
+                "id": "bRO50WCgwE",
+                "desc": "Etiketlediğiniz Kişiye İstediğiniz Rolü Verir",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Emran = require('discord.js');\r\n\r\nexports.run = async (client, message, args) => {\r\n  \t          const ayarlar = require('../ayarlar.json')\r\n\t\t\t\t    let prefix = await require('quick.db').fetch(`prefix.${message.guild.id}`) || ayarlar.prefix\r\n\r\n      if (!message.member.hasPermission(\"MANAGE_ROLES\")) return message.channel.send(new Emran.MessageEmbed().setDescription('Bu komudu kullanmak için **Rolleri Yönet** yetkisine sahip olmalısın.').setColor(10038562));\r\n  let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);\r\nvar role = message.mentions.roles.first() || message.guild.roles.cache.find(a => a.name == args.slice(1).join(' '));\r\nif (!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send('Bu komutu kullanabilmek için \"\\`Rolleri Yönet\\`\" yetkisine sahip olmalısın.');\r\nif (!member) return message.channel.send('Lütfen bir kullanıcıyı etiketleyin.');\r\nif (!role) return message.channel.send(' Rol bulunamadı.');\r\n  if (message.member.roles.highest.comparePositionTo(role) < 1) {\r\n  return message.channel.send(`Verilecek rol sizin rolünüzün üstünde bu yüzden rolü **veremiyorum!**`);\r\n  }\r\n\r\n  try{\r\nawait (member.roles.add(role.id))\r\n message.channel.send(new Emran.MessageEmbed().setDescription(`${member} isimli üyeye \\`${role.name}\\` isimli yetki başarıyla verildi!`)  .setFooter('Bu komutu kullanan yetkili ' + message.author.tag, message.author.avatarURL).setColor('#D2EE07'));\r\n    \r\n  } catch (e) {\r\n    console.log(e);\r\n    message.channel.send('Hata oluştu!');\r\n  }\r\n  \r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['rolver'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'rol-ver',\r\n  description: '',\r\n  usage: ''\r\n};\r\n",
+                "komutlar_code": "YOK",
+                "kod_rank": "altin",
+                "k_adi": "Ufqy",
+                "date": "12/30/2020"
+            },
+            "V12 Rolal": {
+                "isim": "V12 Rolal",
+                "id": "fBQsawBw1U",
+                "desc": "Etiketlediğiniz Kişiden İstediğiniz Rolü Alır",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const emran = require('discord.js');\r\n\r\nexports.run = async (client, message, args) => {\r\n    const ayarlar = require('../ayarlar.json')\r\n            let prefix = await require('quick.db').fetch(`prefix.${message.guild.id}`) || ayarlar.prefix\r\n\r\n        if (!message.member.permissions.has(\"MANAGE_ROLES\")) return message.channel.send(new emran.MessageEmbed().setDescription('Bu komudu kullanmak için **Rolleri Yönet** yetkisine sahip olmalısın.').setColor(10038562));\r\nvar member = message.mentions.members.first();\r\nvar role = message.mentions.roles.first() || message.guild.roles.cache.find(a => a.name == args.slice(1).join(' '));\r\nif (!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send('Bu komutu kullanabilmek için \"\\`Rolleri Yönet\\`\" yetkisine sahip olmalısın.');\r\nif (!member) return message.channel.send('Lütfen bir kullanıcıyı etiketleyin veya ismini yazın.');\r\nif (!role) return message.channel.send('Rol bulunamadı.');\r\n    if (!member.roles.cache.has(role.id)) return message.channel.send(new emran.MessageEmbed().setDescription('Kullanıcı O Yetkiye Sahip Değil.').setColor('#D2EE07'));\r\n  if (message.member.roles.highest.comparePositionTo(role) < 1) {\r\n  return message.channel.send(`Alınacak rol sizin rolünüzün üstünde bu yüzden rolü **veremiyorum!**`);\r\n  }\r\n  try{\r\nawait (member.roles.remove(role.id))\r\n message.channel.send(new emran.MessageEmbed().setDescription(`${member} isimli üyenin \\`${role.name}\\` isimli yetkisi başarıyla alındı!`)  .setFooter('Bu komutu kullanan yetkili ' + message.author.tag, message.author.avatarURL).setColor('#D2EE07'));\r\n    \r\n  } catch (e) {\r\n    console.log(e);\r\n    message.channel.send('Hata oluştu!');\r\n  }\r\n  \r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['rolal'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'rol-al',\r\n  description: '',\r\n  usage: ''\r\n};\r\n",
+                "komutlar_code": "YOK",
+                "kod_rank": "altin",
+                "k_adi": "Ufqy",
+                "date": "12/30/2020"
+            },
+            "V12 Temizle": {
+                "isim": "V12 Temizle",
+                "id": "NpTh0jkpmg",
+                "desc": "Belirttiğiniz Miktar Mesajı Temizler",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nexports.run = function(client, message, args) {\r\nif(!message.member.hasPermission(\"MANAGE_MESSAGES\")) return message.reply(\"Bu Komutu Kullanmak İçin İzniniz Yok!\").then(m => m.delete(8000))\r\nif(!args[0]) return message.channel.send(\" Lütfen Silinicek Mesaj Miktarını Yazın.!\").then(m => m.delete(8000))\r\nmessage.channel.bulkDelete(args[0]).then(() => {\r\n  const embed = new Discord.MessageEmbed()\r\n        .setDescription(`Mesajlar Başarılı Bir Şekilde Yok Edildi.`)\r\n        .setImage(`https://cdn.glitch.com/928f4033-17da-404e-b0cb-9d76f0546c29%2Fstandard.gif?v=1608828316858`)\r\n        .setFooter(`${message.author.username} Tarafından istendi.`)\r\n        .setColor(\"BLACK\")\r\n        .setTimestamp()\r\nmessage.channel.send({ embed }).then(m => m.delete(2000))\r\n})\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['sil'],\r\n  permLevel: 2\r\n};\r\n\r\nexports.help = {\r\n  name: 'temizle',\r\n  description: '',\r\n  usage: ''\r\n};\r\n",
+                "komutlar_code": "YOK",
+                "kod_rank": "altin",
+                "k_adi": "Ufqy",
+                "date": "12/30/2020"
+            },
+            "V12 Karaliste": {
+                "isim": "V12 Karaliste",
+                "id": "IvQRTEOtX4",
+                "desc": "Karaliste Ekle, Çıkar Ve Bilgi Komutları",
+                "modules": [
+                    "discord.js",
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js')\r\nconst db = require('quick.db');\r\nexports.run = async(client, message, args) => {  \r\nlet id = \"746343245034029096\"  //sahip ıd\r\nlet user = message.mentions.users.first() || client.users.cache.get(args.slice(1).join(' '))\r\nif (message.author.id !== id) return message.channel.send(\"Bu komutu yalnızca bot sahibi kullanabilir!\")\r\nif(!args[0]) return message.channel.send(\"Lütfen **ekle** veya **çıkar** yazınız.\\nKullanıcının karaliste bilgisini görmek için **bilgi** kullanın ör:`b?karaliste bilgi`\")\r\nswitch(args[0]) {\r\n  case \"ekle\":\r\n    if (!user) return message.channel.send(\"Bir kişiyi etiketlemelisin veya id sini yazmalısın.\")\r\n    if(user.id == id) return message.channel.send(\"Bu kullanıcı karalisteye alınamaz.\")\r\n    \r\n    db.set(`cokaradalistere_${user.id}`, true)\r\n    message.channel.send(`\\`${user.tag}\\` **artık botu kullanamayacak.**`)\r\n    break;\r\n  case \"çıkar\":\r\n    if (!user) return message.channel.send(\"Bir kişiyi etiketlemelisin veya id sini yazmalısın.\")\r\n    if(user.id == id) return message.channel.send(\"Bu kullanıcı karalisteye alınamaz.\")\r\n    db.delete(`cokaradalistere_${user.id}`)\r\n    message.channel.send(`\\`${user.tag}\\` **artık botu kullanabilir.**`)\r\n    break;\r\n  case \"bilgi\":\r\n    if (!user) return message.channel.send(\"Bir kişiyi etiketlemelisin veya id sini yazmalısın.\")\r\nlet i = db.fetch(`cokaradalistere_${user.id}`)\r\n      if(i == true) message.channel.send(`\\`${user.tag}\\` botu şu anda **kullanamıyor.**`)\r\n      else message.channel.send(`\\`${user.tag}\\` botu şu anda **kullanabiliyor.**`)\r\n    \r\n    break;\r\n}\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\nexports.help = { \r\n\tname: 'karaliste', \r\n\tdescription: '', \r\n  usage: ''\r\n};",
+                "komutlar_code": "if (db.fetch(`cokaradalistere_${message.author.id}`)) return message.channel.send(\"Olamaz sen botun karalistesinde bulunuyorsun botu kullanamazsın.\")\r\n    \r\n\r\nbu kodu message.js bölümündeki   cmd.run(client, message, params, perms);   bölümünün hemen üstüne yapıştırın\r\nsonra message.js bölümünün en üstündeki discord.js tanımlamasının bi altına quick.db yi tanımlayın şu şekilde : const db = require(\"quick.db\");\r\nsonra   cmd.run(client, message, params, perms);   bölümünü   cmd.run(client, message, params, perms, db);  şeklinde değişin\r\nherşeyi yaptıysanız karaliste sistemi hazır demektir. ",
+                "kod_rank": "altin",
+                "k_adi": "Ufqy",
+                "date": "12/30/2020"
+            },
+            "V12 Rol Koruma": {
+                "isim": "V12 Rol Koruma",
+                "id": "ch6BuKqTw1",
+                "desc": "Gelişmiş Rol Koruma Sistemi",
+                "modules": [
+                    "discord.js",
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst codare = require('quick.db');\r\n\r\nexports.run = async(client, message, args) => {\r\n      if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın')\r\n      let kanal = message.mentions.channels.first() || args[0]\r\n      if(!kanal) return message.channel.send('Rol koruma log kanalını belirtmelisin')\r\n      codare.set(`rolk_${message.guild.id}`, kanal.id)\r\n      message.channel.send('Rol koruma sistemi aktif edildi, log kanalı <#'+kanal+'> Olarak ayarlandı.')\r\n\r\n      if(args[0] === 'kapat') {\r\n        if(!codare.fetch(`rolk_${message.guild.id}`)) message.channel.send('Rol koruma sistemi aktif edilmemiş.')\r\n        codare.delete(`rolk_${message.guild.id}`)\r\n        message.channel.send('Rol koruma sistemi kapatıldı, log kanalı sıfırlandı')\r\n      }\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases:['rolkoruma'],\r\n  permlevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"rol-koruma\",\r\n  description: '',\r\n  usage: ''\r\n}",
+                "komutlar_code": "client.on(\"roleDelete\", async role => {\r\n  let kanal = await db.fetch(`rolk_${role.guild.id}`);\r\n  if (!kanal) return;\r\n  const entry = await role.guild\r\n    .fetchAuditLogs({ type: \"ROLE_DELETE\" })\r\n    .then(audit => audit.entries.first());\r\n  if (entry.executor.id == client.user.id) return;\r\n  if (entry.executor.id == role.guild.owner.id) return;\r\n  if(!entry.executor.hasPermission('ROLE_DELETE')) {\r\n      role.guild.roles.create({\r\n    name: role.name,\r\n    color: role.hexColor,\r\n    permissions: role.permissions\r\n  });\r\n   let emran = new Discord.MessageEmbed()\r\n   .setColor('0x36393E')\r\n   .setTitle(`Bir rol silindi !`)\r\n   .setDescription(`Silinen rol adı ${role.name}, Rol koruma sistemi açık olduğu için rol geri oluşturuldu!`)\r\n   client.channels.cache.get(kanal).send(emran)\r\n  }\r\n});",
+                "kod_rank": "altin",
+                "k_adi": "Ufqy",
+                "date": "12/30/2020"
+            },
+            "V12 Emoji Koruma": {
+                "isim": "V12 Emoji Koruma",
+                "id": "X4fTUtlpMC",
+                "desc": "Gelişmiş Koruma Sistemi",
+                "modules": [
+                    "discord.js",
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db');\r\n\r\nexports.run = async(client, message, args) => {\r\n  \r\n      if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Bu Komutu Kullanabilmek için **Yönetici** Yetkisine Sahip Olmalısın!')\r\n  \r\n      let kanal = message.mentions.channels.first() || args[0]\r\n      if(!kanal) return message.channel.send('Bir Kanal Etiketlemelisin!')\r\n  \r\n      db.set(`emotek_${message.guild.id}`, kanal.id)\r\n      message.channel.send(`Emoji Koruma Sistemi Aktif ve Kanal ${kanal} Olarak Seçildi!`)\r\n\r\n      if(args[0] === 'kapat') {\r\n        \r\n        if(!db.fetch(`emotek_${message.guild.id}`)) return message.channel.send('Aktif Olmayan Bir Şeyi Kapatamam')\r\n        \r\n        db.delete(`emotek_${message.guild.id}`)\r\n        message.channel.send('Emoji Koruma Sistemi Kapatıldı ve Veriler Silindi!')\r\n      }\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases:[\"emojikoruma\"],\r\n  permlevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"emoji-koruma\"\r\n}",
+                "komutlar_code": "client.on(\"emojiDelete\", async (emoji, message) => {\r\n  \r\n  let kanal = await db.fetch(`emotek_${emoji.guild.id}`);\r\n  if (!kanal) return;\r\n  \r\n  const entry = await emoji.guild.fetchAuditLogs({ type: \"EMOJI_DELETE\" }).then(audit => audit.entries.first());\r\n  if (entry.executor.id == client.user.id) return;\r\n  if (entry.executor.id == emoji.guild.owner.id) return;\r\n  if (!emoji.guild.members.cache.get(entry.executor.id).hasPermission('ADMINISTRATOR')) {\r\n    \r\n  emoji.guild.emojis.create(`${emoji.url}`, `${emoji.name}`).catch(console.error);\r\n    \r\n   let embbed = new Discord.MessageEmbed()\r\n   .setColor('RANDOM')\r\n   .setTitle(`Bir Emoji Silindi`)\r\n   .setDescription(`Silinen Emoji: ${emoji.name}, Emoji Koruma Sistemi Açık Olduğundan Tekrar Eklendi!`)\r\n   message.client.channels.cache.get(kanal).send(embbed)\r\n  \r\n  }\r\n\r\n});",
+                "kod_rank": "altin",
+                "k_adi": "Ufqy",
+                "date": "12/30/2020"
+            },
+            "V12 Emoji Ekle": {
+                "isim": "V12 Emoji Ekle",
+                "id": "IsYPeSOnck",
+                "desc": "Gelişmiş Emoji Ekleme",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message, args) => {\r\nif(!message.member.hasPermission('MANAGE_EMOJIS')) return message.channel.send('Bu komutu kullanabilmek için `Emojileri Yönet` yetkisine sahip olmalısın.');\r\nif(!args[0]) return message.channel.send('Bir link ve ad yazmalısın. `b?mojiekle https://cdn.discordapp.com/emojis/601379275769118731.png yilmazbot`');\r\nif(!args[0].endsWith('.png')) return message.channel.send('Doğru bir link yazmalısın.');\r\nif(!args[1]) return message.channel.send('Bir emoji adı yazmalısın. `e!emojiekle https://cdn.discordapp.com/emojis/601379275769118731.png erensibot`');\r\nif(['ç', 'ö', 'ü', 'ş', 'İ', 'I', 'ğ', 'Ç', 'Ö', 'Ü', 'Ş', 'Ğ'].includes(args[1])) return message.channel.send('**Emoji adını yazarken Türkçe karakter kullanmamalısın!**');\r\nmessage.guild.emojis.create(args[0], args.slice(1).join(' ')).then(s => {\r\nmessage.channel.send(`${s.name} adında emoji oluşturuldu. (${s})`);\r\n});\r\n};\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['emojiekle'],\r\n  permLevel: 0\r\n};\r\n \r\nexports.help = {\r\n  name: 'emoji-ekle'\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "altin",
+                "k_adi": "Ufqy",
+                "date": "12/30/2020"
+            }
+        }
+    }
+]

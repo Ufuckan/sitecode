@@ -1,0 +1,90 @@
+[
+    {
+        "kodlar": {
+            "Cooldown ": {
+                "isim": "Cooldown ",
+                "id": "PzXX8PNOg1",
+                "desc": "Komuta Cooldown Ekleme",
+                "modules": [
+                    "Modül Gerek Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/icons/806917768355381318/a9bc20a01349bcb99b760bbf23b63260.webp",
+                "main_code": "`const data = require(\"quick.db\");\r\nif(await data.fetch(cooldown${message.author.id})) return message.channel.send(\"Lütfen \" + (await data.fetch(cooldown${message.author.id})) + \" Saniye Bekle!\");\r\nlet cooldown = 2; //Saniye türünden yazın, 60'dan fazla olmasın.\r\nfor(let i=cooldown;i !== cooldown;i--) {\r\nsetTimeout(function() {\r\ndata.set(cooldown_${message.author.id}, i);\r\n}, 1000);\r\n}`",
+                "komutlar_code": "BUNU KOMUTTA EXPORT RUN YAZISININ Bİ ALTINA YAZIN",
+                "kod_rank": "ekbilgi",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Oy Şartı": {
+                "isim": "Oy Şartı",
+                "id": "DvYnNNo0BK",
+                "desc": "Komuta Oy Şartı Ekleme",
+                "modules": [
+                    "Modül Gerek Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/icons/806917768355381318/a9bc20a01349bcb99b760bbf23b63260.webp",
+                "main_code": "`const DBL = require('dblapi.js')\r\nconst dbl = new DBL('TOKEN', client) \r\n\r\n\r\ndbl.hasVoted(message.author.id).then(voted => {\r\n      if(voted) {\r\n\r\n\r\n\r\n      //komut\r\n \r\n\r\n\r\n     } else {\r\n        message.channel.send(\"Bu komutu kullanabilmek için 12 saatte bir https://discordbots.org/bot/BOTUNID/vote sitesinden bota oy vermeniz gerekmektedir. Onaylanması birkaç dakika sürebilir, lütfen bekleyin.\")\r\n      }\r\n  })`",
+                "komutlar_code": "Dbl Tokeninizi https://discordbots.org/api/docs#mybots Sitesine Girip MyBots Yerine Tıkladıktan Sonra Botunuzu Seçin Ve Tokeninizi Alın. ",
+                "kod_rank": "ekbilgi",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Emoji Ekleme": {
+                "isim": "Emoji Ekleme",
+                "id": "XIcmY4QOK2",
+                "desc": "Komutan Emoji Ekleme",
+                "modules": [
+                    "Modül Gerek Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "Eğer hareketli emoji kullanmak istiyorsanız <a:emoji ismi:emoji id'si>\r\nEğer hareketsiz emoji kullanmak istiyorsanız <:emoji ismi:emoji id'si>",
+                "komutlar_code": "Emoji ID Almak İçin ```emoji``` Şeklinde Yazmanı Yeter <a:emojiadı:emojiıd> veya <emojiadı:emojiıd> Şeklinde Alabilirsiniz. ",
+                "kod_rank": "ekbilgi",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Perm Leveller": {
+                "isim": "Perm Leveller",
+                "id": "DfvhucoRbi",
+                "desc": "Perm Level Listesi ",
+                "modules": [
+                    "Modül Gerek Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "- CREATE_INSTANT_INVITE : Davet Oluştur\r\n- KICK_MEMBERS : Üyeleri At\r\n- BAN_MEMBERS : Üyeleri Banla\r\n- ADMINISTRATOR : Admin\r\n- MANAGE_CHANNELS : Kanalları Yönet\r\n- MANAGE_GUILD : Sunucuları Yönet\r\n- ADD_REACTIONS : Tepki Ekle\r\n- VIEW_AUDIT_LOG : Denetim Kaydını Görüntüle\r\n- PRIORITY_SPEAKER : Öncelikli Konuşmacı\r\n- VIEW_CHANNEL : Kanalı Görüntüle\r\n- READ_MESSAGES : Mesajları Oku\r\n- SEND_MESSAGES : Mesaj Gönder\r\n- SEND_TTS_MESSAGES : Sesli Mesaj Gönder\r\n- MANAGE_MESSAGES : Mesajları Yönet\r\n- EMBED_LINKS : Bağlantı Yerleştir\r\n- ATTACH_FILES : Dosya Ekle\r\n- READ_MESSAGE_HISTORY : Mesaj Geçmişini Oku\r\n- MENTION_EVERYONE : Herkesten Bahset\r\n- EXTERNAL_EMOJIS : Harici Emoji\r\n- USE_EXTERNAL_EMOJIS : Harici Emojiler Kullan\r\n- CONNECT : Bağlan\r\n- SPEAK : Konuş\r\n- MUTE_MEMBERS : Üyeleri Sustur\r\n- DEAFEN_MEMBERS : Üyeleri Sağırlaştır\r\n- MOVE_MEMBERS : Üyeleri Taşı\r\n- USE_VAD : Ses Eylemini Kullan\r\n- CHANGE_NICKNAME : Kullanıcı adı Değiştir\r\n- MANAGE_NICKNAMES : Kullanıcı adlarını Yönet\r\n- MANAGE_ROLES : Rolleri Yönet\r\n- MANAGE_ROLES_OR_PERMISSIONS : Rolleri/İzinleri Yönet\r\n- MANAGE_WEBHOOKS : Webhook'ları Yönet\r\n- MANAGE_EMOJIS : Emojileri Yönet``",
+                "komutlar_code": "if (!Mesaj.member.hasPermission(\"ADMİNİSTRATOR\")) {\r\n      Hata.setDescription(\"Bu komutu kullanmak için `Yönetici` yetkisine sahip olmanız gerekmektedir.\");\r\n\r\n\r\nBu Şekildede Belirleyebilirsiniz ",
+                "kod_rank": "ekbilgi",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Embedler": {
+                "isim": "Embedler",
+                "id": "AbxgbRGs2I",
+                "desc": "Embed Listesi",
+                "modules": [
+                    "Modül Gerek Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": ".setTitle(\"\") :: Başlık\r\n.addField(\"\", \"\") :: Satır \r\n.setDescription(\"\") :: Açıklama\r\n.setFooter(\"\") :: Son Açıklama\r\n.setTimestamp() :: Saat\r\n.setURL(\"\") :: Link\r\n.setThumbnail(\"\") :: Sağ Üste Resim\r\n.setColor(\"\") :: Renk\r\n.setImage(\"\") :: Gömülü Resim",
+                "komutlar_code": "V12 Embed Listesi",
+                "kod_rank": "ekbilgi",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            },
+            "Token Gizleme": {
+                "isim": "Token Gizleme",
+                "id": "an7x91Yej4",
+                "desc": "Glitch Token Gizleme",
+                "modules": [
+                    "Modül Gerek Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "İlk Öncelikle Main Dosyanıza Giriyosunuz.\r\nSonra Kod Eklemsiyseniz En Altta  clien.login(\"ayarlar.token\");   Yerini   client.login(\"process.env.token\");   Şeklinde Değiştiriyosunuz Ve ayarlar.json Dosyanıza Geliyosunuz. \r\n{\r\nprefix: \"prefix\", \r\nsahip: \"ıdniz\", \r\ntoken: \"token\"\r\n} \r\nbölümündeki   token: \"token\"   yerini silip   sahip: \"ıdniz\",   bölümündeki , siliyosunuz ve ayarlar.json böşümünün son hali\r\n{\r\nprefix: \"prefix\", \r\nsahip: \"ıdniz\" \r\n}\r\nşeklinde oluyor. \r\naonra  .env dosyanıza geliyorsunuz altta add a variable seçeneğine basıyosunuz\r\ngelen yerde sol tarafa   token   sağ tarafa iste tokeninizi yazıyosunuz. ",
+                "komutlar_code": "Bukadar Eğer Baştan Desiklerimi Doğru Yaptıysanız Tokenini Gizli Demektir.\r\nİyi Ve Gizli Kodlamalar. :) ",
+                "kod_rank": "ekbilgi",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/29/2020"
+            }
+        }
+    }
+]

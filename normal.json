@@ -1,0 +1,400 @@
+[
+    {
+        "kodlar": {
+            "V12 Davet": {
+                "isim": "V12 Davet",
+                "id": "jPF1gRwtRu",
+                "desc": "Davet Linklerini Atan Kod",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message) => {\r\n  \r\n  const davet = new Discord.MessageEmbed()\r\n  .setColor('RED')\r\n  .setThumbnail('https://cdn.glitch.com/928f4033-17da-404e-b0cb-9d76f0546c29%2F_20201225_113308.JPG?v=1608907610352')\r\n  .setDescription(`\r\n\r\n➥[Bot Davet](https://discord.com/oauth2/authorize?client_id=764434186613555222&permissions=8&scope=bot)\\n➥[Destek Sunucusu](https://discord.gg/nRGF3myE3k)\\n➥[Oy Ver](https://top.gg/bot/764434186613555222/vote)\r\n\r\n`)\r\n  message.channel.send(davet)\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n}\r\nexports.help = {\r\n  name: \"davet\"\r\n}",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 İstatistik": {
+                "isim": "V12 İstatistik",
+                "id": "326o8Mh7Tj",
+                "desc": "Bot İstatistiklerini Atan Kod",
+                "modules": [
+                    "discord.js",
+                    "moment",
+                    "os",
+                    "moment-duration-format"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require(\"discord.js\");\r\nconst moment = require(\"moment\");\r\nconst os = require(\"os\");\r\nrequire(\"moment-duration-format\");\r\n\r\nexports.run = async (client, message, args) => {\r\n  const msg = new Discord.MessageEmbed()\r\n    .setColor(\"RED\")\r\n    .setFooter(client.user.tag, client.user.avatarURL())\r\n  .addField(\r\n  \" **Sahibim**\",\"<@746343245034029096> / ɱႦ ɱЯBaşkan#7777\"\r\n  )\r\n    .addField(\r\n      \" **Bellek kullanımı**\",\r\n      (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + \" MB\",\r\n      true\r\n    )\r\n    .addField(\r\n      \" **Çalışma süresi**\",\r\n      moment\r\n        .duration(client.uptime)\r\n        .format(\" D [gün], H [saat], m [dakika], s [saniye]\")\r\n    )\r\n  \r\n    .addField(\r\n            \" **Kullanıcılar**\",client.guilds.cache\r\n        .reduce((a, b) => a + b.memberCount, 0)\r\n\r\n        .toLocaleString(),\r\n\r\n      true\r\n\r\n    )\r\n\r\n    .addField(\r\n\r\n      \" **Sunucular**\",\r\n\r\n      client.guilds.cache.size.toLocaleString(),\r\n\r\n      true\r\n\r\n    )\r\n\r\n    .addField(\r\n\r\n      \" **Kanallar**\",\r\n\r\n      client.channels.cache.size.toLocaleString(),\r\n\r\n      true\r\n\r\n    )\r\n\r\n.addField(\" **Discord.JS sürüm**\", \"v\" + Discord.version, true)\r\n\r\n    .addField(\" **Node.JS sürüm**\", `${process.version}`, true)\r\n\r\n    .addField(\" **Ping**\", client.ws.ping + \" ms\", true)\r\n\r\n    .addField(\r\n\r\n      \" **CPU**\",\r\n\r\n      `\\`\\`\\`md\\n${os.cpus().map((i) => `${i.model}`)[0]}\\`\\`\\``\r\n\r\n    )\r\n      .addField(\" **Bit**\", `\\`${os.arch()}\\``, true)\r\n\r\n    .setThumbnail(client.user.avatarURL())\r\n\r\n  .setImage(\"https://media.discordapp.net/attachments/720029424216440923/735255651638313061/727894683061321759.gif\")\r\n\r\n    .addField(\" **İşletim Sistemi**\", `\\`\\`${os.platform()}\\`\\``)\r\n\r\n    .addField(\"**➥ Linkler**\", \"[➥ Davet Linki](https://discord.com/oauth2/authorize?client_id=764434186613555222&permissions=8&scope=bot)\\n[➥ Destek Sunucu](https://discord.gg/nRGF3myE3k)\\n[➥ Oyver](https://top.gg/bot/764434186613555222/vote)\");\r\n\r\n  return message.channel.send(msg);\r\n\r\n};\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: [\"i\"],\r\n    permLevel: 0,\r\n}\r\nexports.help = {\r\n  name: \"istatistik\",\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Emojiler": {
+                "isim": "V12 Emojiler",
+                "id": "0zBn2JwNNt",
+                "desc": "Sunucudaki Emojileri Atar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require(\"discord.js\");\r\n\r\nexports.run = async (client, message) => {\r\n\r\nvar page = 0;\r\n  \r\nlet arr = [];\r\nlet emojiarr = message.guild.emojis.cache.array();\r\n\r\nfor(let i =0; Number(i + \"0\") < (Math.round(emojiarr.length/5)*5 +1); ++i) {\r\nvar on = emojiarr.slice(Number(i + \"0\"), Number(i + \"0\")+5)\r\narr.push(on.toString())\r\n}\r\nlet embd = new Discord.MessageEmbed()\r\nmessage.channel.send(embd.setDescription(arr[0]).setFooter(`Sayfa ${page+1} / ${arr.length+1}`)).then(async msg => {\r\n      await msg.react(\"⬅️\");\r\n      await msg.react(\"➡️\");\r\n\r\n      let filter = (reaction, user) => user.id !== message.client.user.id && user.id === message.author.id;\r\n\r\n      var collector = msg.createReactionCollector(filter, {\r\n        time: 120000\r\n      });\r\n\r\n      collector.on(\"collect\", async (reaction, user) => {\r\n        switch (reaction.emoji.name) {\r\n          case \"⬅️\":\r\n            reaction.users.remove(user).catch(console.error);\r\n            if (page == 0) return;\r\n            --page\r\n\r\n              embd.setColor(\"RANDOM\");\r\n              embd.setFooter(`Sayfa ${page+1} / ${arr.length+1}`);\r\n              embd.setDescription(arr[page])\r\n            msg.edit(embd)\r\n           break;\r\n          case \"➡️\":\r\n            if (page == arr.length) return;\r\n            ++page\r\n            reaction.users.remove(user).catch(console.error);\r\n              embd.setColor(\"RANDOM\");\r\n              embd.setFooter(`Sayfa ${page+1} / ${arr.length+1}`);\r\n              embd.setDescription(arr[page] || \"Bulunamadı\")\r\n            msg.edit(embd)\r\n          break;\r\n\r\n        }\r\n      });\r\n\r\n})\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"emojiler\"\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Komutsay": {
+                "isim": "V12 Komutsay",
+                "id": "Ru1WBh2OYE",
+                "desc": "Botta Bulunan Komut Sayısını Atar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/690591492330225686/9e9600d3761b3ec891347a6082f8d346.png",
+                "main_code": "const Discord = require('discord.js')\r\nexports.run = function(client, message, args) {\r\n\r\nconst embed = new Discord.MessageEmbed()\r\n.setTimestamp()\r\n.setFooter(`${message.author.tag} Tarafından İstendi.`)\r\n.addField(`Botta Bulunan Toplam Komut Sayısı`,`${client.commands.size}`)\r\n  message.channel.send(embed)\r\n  \r\n  \r\n};\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: [\"komutlar\"],\r\n    permLevel: 0\r\n  };\r\n  \r\n  exports.help = {\r\n    name: 'komutsay'\r\n  };",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "! ✮ RolaX ✬ Creed",
+                "date": "2/23/2021"
+            },
+            "V12 Rolbilgi": {
+                "isim": "V12 Rolbilgi",
+                "id": "3QFwqKa4bj",
+                "desc": "Etiketlediğiniz Rol Hakkında Bilgi Verir",
+                "modules": [
+                    "discord.js",
+                    "moment",
+                    "moment-duration-format"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst moment = require('moment');\r\nrequire('moment-duration-format');\r\n\r\nexports.run = async(client, message, args) => {\r\n    var aylar = {\r\n      \"01\": \"Ocak\",\r\n      \"02\": \"Şubat\",\r\n      \"03\": \"Mart\",\r\n      \"04\": \"Nisan\",\r\n      \"05\": \"Mayıs\",\r\n      \"06\": \"Haziran\",\r\n      \"07\": \"Temmuz\",\r\n      \"08\": \"Ağustos\",\r\n      \"09\": \"Eylül\",\r\n      \"10\": \"Ekim\",\r\n      \"11\": \"Kasım\",\r\n      \"12\": \"Aralık\"\r\n    }\r\n    \r\n    var duration = moment.duration(client.uptime).format(\" D [gün] H [saat] m [dakika] s [saniye]\")\r\n    \r\n    let rol = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]) || message.guild.roles.cache.find(rol => rol.id === args[0]);\r\n  \r\n    if(!rol) return message.channel.send(new Discord.MessageEmbed().setColor('BLACK').setDescription(`**Lütfen Rol Belirt**`).setAuthor(`Hata !`, message.author.avatarURL({dynamic: true})))\r\n  \r\n    var embed = new Discord.MessageEmbed()\r\n        .setColor(\"BLACK\")\r\n        .setDescription(`\r\n          __**Rol İsmi:**__ ${args[0]}\r\n          __**Bu Role Sahip Kullanıcılar**__ ${rol.members.size}\r\n          __**Rolün Rengi**__ ${rol.hexColor}\r\n          __**Oluşturulma Tarihi**__ ${moment(rol.createdAt).format('DD')} ${aylar[moment(rol.createdAt).format('MM')]} ${moment(rol.createdAt).format('YYYY HH:mm:ss')}\r\n          __**Rolün ID**__ ${rol.id}\r\n        `)\r\n    return message.channel.send(embed);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"rolbilgi\"],\r\n  permLevel: 0,\r\n}\r\n\r\nexports.help = {\r\n  name: 'rol-bilgi',\r\n  description: '',\r\n  usage: '' \r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Avatar": {
+                "isim": "V12 Avatar",
+                "id": "zpVQLviCAh",
+                "desc": "Etiketlediğiniz Kişinin Avatarını Gösterir",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nexports.run = (client, message, args) => { \r\nlet mention = message.mentions.users.first();\r\nlet sender = \"\";\r\nif (message.channel.guild.member(message.author).nickname == null) {\r\n  sender = message.author.username;\r\n} else {\r\n  sender = message.channel.guild.member(message.author).nickname;\r\n}\r\nif (mention != null || mention != undefined) {\r\n  var name = mention.username + \"'s \";\r\n  if (mention.username.endsWith(\"s\")) {\r\n    name = mention.username + \"' \";\r\n  }\r\n  const avatarEmbedOther = new Discord.MessageEmbed()\r\n  .setAuthor(mention.username, mention.avatarURL({ dynamic: true, format: 'png', size: 1024 }))\r\n  .setColor('RED')\r\n  .setImage(mention.avatarURL({ dynamic: true, format: 'png', size: 1024 }))\r\n  .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL())\r\n  message.channel.send(avatarEmbedOther);\r\n  return;\r\n} else {\r\n  const avatarEmbedYou = new Discord.MessageEmbed()\r\n  .setAuthor(sender,message.author.avatarURL({ dynamic: true, format: 'png', size: 1024 }))\r\n  .setColor('RED')\r\n    .setImage(message.author.avatarURL({ dynamic: true, format: 'png', size: 1024 }))\r\n  .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL())\r\n  message.channel.send(avatarEmbedYou);\r\n  return;\r\n} \r\nmessage.channel.send(\"Render hatası yada bilinmeyen bir hata oldu.\");\r\n} \r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\nexports.help = {\r\n  name: 'avatar',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Balıktut": {
+                "isim": "V12 Balıktut",
+                "id": "xzYXTL9SNT",
+                "desc": "Balık Tutarsınız",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst client = new Discord.Client();\r\n\r\nexports.run = (client, message) => {\r\n   message.channel.send('Balık Tuttun Balığı Çekiyorsun..').then(message => {\r\n   var baliklar = ['``Sazan Tuttun!`` :fish:' ,'``Köpek Balığı Tuttun İyi Para Eder Sat Sat`` :D' ,'``Uskumru Tuttun!`` :fish:' ,'``Mezgit Tuttun! Havyarıda Var Hee`` :) :fish:' ,'``Japon Balığı Tuttun Yemeyi Düşünmüyorsun Herhalde?``' ,'``Hamsi Tuttun!`` :fish:' ,'``Levrek Tuttun!`` :fish:' ,'``Hiçbirşey Tutamadın Maalesef!`` :wastebasket:' ,'``Alabalık Tuttun!`` :fish:' ,'``Maalesef Balık Oltadan Kaçtı!`` :wastebasket:' ,'``İstavrit Tuttun!`` :fish:'];\r\n      var balik = baliklar[Math.floor(Math.random() * baliklar.length)];\r\n            message.edit(`${balik}`);\r\n });\r\n  }\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'balıktut',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Düzello": {
+                "isim": "V12 Düzello",
+                "id": "t5q5J8qwvt",
+                "desc": "Etiketlediğiniz Kullanıcıyla Vs Atarsınız",
+                "modules": [
+                    "discord.js",
+                    "common-tags"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst { stripIndents } = require('common-tags');\r\nconst { randomRange, verify } = require('../util/Util.js');\r\nexports.run = async (client, message, args) => {\r\n  \r\n  this.fighting = new Set();\r\n  \r\n\tlet opponent = message.mentions.users.first()\r\n\tif (!opponent) return message.reply(\"Oynamak istediğin kişiyi etiketlemelisin!\")\r\n  \r\n  if (opponent.bot) return message.reply('Botlar ile oynayamazsın!');\r\n  if (opponent.id === message.author.id) return message.reply('Kendin ile düello Atamazsın');\r\n\t\tif (this.fighting.has(message.channel.id)) return message.reply('Kanal başına sadece bir düello meydana gelebilir.');\r\n\t\tthis.fighting.add(message.channel.id);\r\n\t\ttry {\r\n\t\t\tif (!opponent.bot) {\r\n                await message.channel.send(`${opponent}, düello isteği geldi. Düello'yu kabul ediyor musun? (\\`evet\\` veya \\`hayir\\` olarak cevap veriniz.)`);\r\n\t\t\t\tconst verification = await verify(message.channel, opponent);\r\n\t\t\t\tif (!verification) {\r\n\t\t\t\t\tthis.fighting.delete(message.channel.id);\r\n\t\t\t\t\treturn message.channel.send(`Düello kabul edilmedi...`);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tlet userHP = 500;\r\n\t\t\tlet oppoHP = 500;\r\n\t\t\tlet userTurn = false;\r\n\t\t\tlet guard = false;\r\n\t\t\tconst reset = (changeGuard = true) => {\r\n\t\t\t\tuserTurn = !userTurn;\r\n\t\t\t\tif (changeGuard && guard) guard = false;\r\n\t\t\t};\r\n\t\t\tconst dealDamage = damage => {\r\n\t\t\t\tif (userTurn) oppoHP -= damage;\r\n\t\t\t\telse userHP -= damage;\r\n\t\t\t};\r\n\t\t\tconst forfeit = () => {\r\n\t\t\t\tif (userTurn) userHP = 0;\r\n\t\t\t\telse oppoHP = 0;\r\n\t\t\t};\r\n\t\t\twhile (userHP > 0 && oppoHP > 0) { // eslint-disable-line no-unmodified-loop-condition\r\n\t\t\t\tconst user = userTurn ? message.author : opponent;\r\n\t\t\t\tlet choice;\r\n\t\t\t\tif (!opponent.bot || (opponent.bot && userTurn)) {\r\n\t\t\t\t\tawait message.channel.send(stripIndents`\r\n\t\t\t\t\t\t${user}, ne yapmak istersin? \\`saldır\\`, \\`savun\\`, \\`ultra güç\\`, veya \\`kaç\\`?\r\n\t\t\t\t\t\t**${message.author.username}**: ${userHP} :heartpulse:\r\n\t\t\t\t\t\t**${opponent.username}**: ${oppoHP} :heartpulse:\r\n\t\t\t\t\t`);\r\n\t\t\t\t\tconst filter = res =>\r\n\t\t\t\t\t\tres.author.id === user.id && ['saldır', 'savun', 'ultra güç', 'kaç'].includes(res.content.toLowerCase());\r\n\t\t\t\t\tconst turn = await message.channel.awaitMessages(filter, {\r\n\t\t\t\t\t\tmax: 1,\r\n\t\t\t\t\t\ttime: 30000\r\n\t\t\t\t\t});\r\n\t\t\t\t\tif (!turn.size) {\r\n\t\t\t\t\t\tawait message.reply(`Üzgünüm ama, süre doldu!`);\r\n\t\t\t\t\t\treset();\r\n\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t}\r\n\t\t\t\t\tchoice = turn.first().content.toLowerCase();\r\n\t\t\t\t} else {\r\n\t\t\t\t\tconst choices = ['saldır', 'savun', 'ultra güç'];\r\n\t\t\t\t\tchoice = choices[Math.floor(Math.random() * choices.length)];\r\n\t\t\t\t}\r\n\t\t\t\tif (choice === 'saldır') {\r\n\t\t\t\t\tconst damage = Math.floor(Math.random() * (guard ? 10 : 100)) + 1;\r\n\t\t\t\t\tawait message.channel.send(`${user}, **${damage}** hasar vurdu!`);\r\n\t\t\t\t\tdealDamage(damage);\r\n\t\t\t\t\treset();\r\n\t\t\t\t} else if (choice === 'savun') {\r\n\t\t\t\t\tawait message.channel.send(`${user}, kendisini süper kalkan ile savundu!`);\r\n\t\t\t\t\tguard = true;\r\n\t\t\t\t\treset(false);\r\n\t\t\t\t} else if (choice === 'ultra güç') {\r\n\t\t\t\t\tconst miss = Math.floor(Math.random() * 4);\r\n\t\t\t\t\tif (!miss) {\r\n\t\t\t\t\t\tconst damage = randomRange(100, guard ? 150 : 300);\r\n\t\t\t\t\t\tawait message.channel.send(`${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterki miktarda topladın ve **${damage}** hasar vurdun!!`);\r\n\t\t\t\t\t\tdealDamage(damage);\r\n\t\t\t\t\t} else {\r\n\t\t\t\t\t\tawait message.channel.send(`${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterli miktarda toplayamadığın için ulta güç kullanamadın!`);\r\n\t\t\t\t\t}\r\n\t\t\t\t\treset();\r\n\t\t\t\t} else if (choice === 'kaç') {\r\n\t\t\t\t\tawait message.channel.send(`${user}, kaçtı! Korkak!`);\r\n\t\t\t\t\tforfeit();\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t} else {\r\n\t\t\t\t\tawait message.reply('Ne yapmak istediğini anlamadım.');\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tthis.fighting.delete(message.channel.id);\r\n            const winner = userHP > oppoHP ? message.author : opponent;\r\n\t\t\treturn message.channel.send(`Oyun bitti! Tebrikler, **${winner}** kazandı! \\n**${message.author.username}**: ${userHP} :heartpulse: \\n**${opponent.username}**: ${oppoHP} :heartpulse:`);\r\n\t\t} catch (err) {\r\n\t\t\tthis.fighting.delete(message.channel.id);\r\n\t\t\tthrow err;\r\n\t\t}\r\n  }\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\nexports.help = {\r\n  name: 'düello',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Espri": {
+                "isim": "V12 Espri",
+                "id": "VbcJezJr31",
+                "desc": "Bot Espri Yapar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst client = new Discord.Client();\r\n\r\nexports.run = (client, message) => {\r\n   message.channel.send('Espri geliyor hazır ol').then(message => {\r\n      var DevTR = ['Seni görünce; \\ngözlerim dolar, \\nkulaklarım euro.','Kar üzerinde yürüyen adama ne denir. Karabasan.','Yıkanan Ton’a ne denir? Washington!','Gidenin arkasına bakmayın yoksa geleni göremezsiniz.','+Oğlum canlılara örnek ver. \\n-Kedi, köpek. \\n+Cansızlara örnek ver. \\n-Ölü kedi, ölü köpek.','+Kanka ben banyoya 3 kişi giriyom. \\n-Oha nasıl? \\n+Hacı, Şakir ve ben. \\n-Defol lan!','+Kocanızla ortak özelliğiniz ne? \\n-Aynı gün evlendik.','+Evladım ödevini neden yapmadın? \\n-Bilgisayarım uyku modundaydı, uyandırmaya kıyamadım.','+Bizim arkadaş ortamında paranın lafı bile olmaz. \\n-Niye ki? \\n+Çünkü hiç birimizin parası yok.','Annemin bahsettiği elalem diye bir örgüt var illuminatiden daha tehlikeli yemin ederim.','+Acıkan var mı ya? \\n-Yok bizde tatlı kan var.','Yılanlardan korkma, yılmayanlardan kork.','+Baykuşlar vedalaşırken ne der? \\n-Bay bay baykuş.','Beni Ayda bir sinemaya götürme, Marsta bir sinemaya götür.','Aaa siz çok terlemişsiniz durun size terlik getireyim.','Aklımı kaçırdım, 100.000 TL fidye istiyorum.'];\r\n      var devtr_kod_paylasim = DevTR[Math.floor(Math.random() * DevTR.length)];\r\n            message.edit(`${devtr_kod_paylasim}`);\r\n });\r\n  }\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'espri',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Tkm": {
+                "isim": "V12 Tkm",
+                "id": "Mpi7VKMfDj",
+                "desc": "Taş Kağıt Makas Oynarsınız",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js'), \r\n    rps = [\r\n        'makas',\r\n        'taş',\r\n        'kağıt'\r\n    ],\r\n    rpsF = (userAns, botAns) => {\r\n        let choice = userAns,\r\n            botChoice = botAns;\r\n        if (choice === 'taş') {\r\n            if (botChoice === 'makas') {\r\n                return 'won';\r\n            } else if (botChoice === 'kağıt') {\r\n                return 'kaybettin';\r\n            }\r\n\r\n            return 'lost';\r\n        } else if (choice === 'kağıt') {\r\n            if (botChoice === 'taş') {\r\n                return 'lost';\r\n            } else if (botChoice === 'makas') {\r\n                return 'Kazandın';\r\n            }\r\n\r\n            return 'draw';\r\n        } else if (choice === 'makas') {\r\n            if (botChoice === 'taş') {\r\n                return 'lost';\r\n            } else if (botChoice === 'kağıt') {\r\n                return 'Kazandın';\r\n            }\r\n\r\n            return 'draw';\r\n        }\r\n    };\r\nexports.run = async (client, msg, args) => {\r\n    if (!args[0]) {\r\n        return msg.channel.send('Lütfen seçimini yap taş, kağıt, makas');\r\n    }\r\n    let choice = args[0].toLowerCase();\r\n    choice = choice === 't' ? 'taş' : choice;\r\n    choice = choice === 'k' ? 'kağıt' : choice;\r\n    choice = choice === 'm' ? 'makas' : choice;\r\n    if (!rps.includes(choice)) {\r\n        return msg.channel.send('Lütfen seçimini yap taş, kağıt yada makas & tkm <t,k,m>');\r\n    }\r\n    let rand = Math.floor(Math.random() * 3);\r\n    let botChoice = rps[rand];\r\n    let result = rpsF(choice, botChoice);\r\n    let answer = '';\r\n\r\n    if (result === 'won') {\r\n        answer = '🏆 Başarılı, sen **Kazandın** 🏆 \\nSenin Seçtiği: `' + choice + '` | Bot\\'un Seçtiği: `' + botChoice + '`';\r\n    } else if (result === 'lost') {\r\n        answer = '❌ Bidakine **Kaybetin Dostum** ❌ \\nSenin Seçtiğin: `' + choice + '` | Bot\\'s Seçtiği: `' + botChoice + '`';\r\n    } else if (result === 'draw') {\r\n        answer = '😐 Sonuç **Berabere** 😐\\nSenin Seçimin: `' + choice + '` | Bot\\'un Seçimi: `' + botChoice + '`';\r\n    }\r\n\r\n    msg.channel.send(answer);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"taşkağıtmakas\"],\r\n  permLevel: 0\r\n };\r\n \r\n exports.help = {\r\n name: 'tkm',\r\n description: '',\r\n usage: ''\r\n }",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Oyverdim": {
+                "isim": "V12 Oyverdim",
+                "id": "JG4znRsVuY",
+                "desc": "Dbl Onaylı Botlar İçin Oyverdim Komutu",
+                "modules": [
+                    "discord.js",
+                    "dblapi.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/690591492330225686/9e9600d3761b3ec891347a6082f8d346.png",
+                "main_code": "const Discord = require(\"discord.js\"); \r\nconst client = new Discord.Client();\r\nconst DBL = require(\"dblapi.js\");\r\nconst dbl = new DBL('DBL TOKEN', client);\r\nexports.run = (client, message) => {\r\n    dbl.hasVoted(message.author.id).then(voted => { \r\n        if (!voted) {\r\n            message.channel.send( new Discord.MessageEmbed()\r\n.setTitle(\"UYARI\")\r\n.setColor(\"RANDOM\")\r\n.setFooter(client.user.username)\r\n.setThumbnail(client.user.avatarURL)\r\n.setDescription(\"Bu Komutu Kullana Bilmek için Bana Oy Vermelisin!\")\r\n.addField(\"Oy Vermek için:\", `[Bana Tıkla!](https://top.gg/bot/${client.user.id}/vote)`)\r\n)\r\n\r\n        } else {\r\n            message.channel.send(\"Rolün Başarıyla Verildi! Destek Verdiğin İçin Teşekkürler!\");\r\n            message.member.roles.add(\"791954360958713895\")  //Verilecek Rol ID\r\n        }\r\n    })\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [\"oyverdim\"],\r\n  permLevel: 0,\r\n   \r\n};\r\n\r\nexports.help = {\r\n  name: 'oyverdim',\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "! ✮ RolaX ✬ Creed",
+                "date": "2/23/2021"
+            },
+            "V12 Modlog": {
+                "isim": "V12 Modlog",
+                "id": "fqKoYg8Qdt",
+                "desc": "Modlog Sistemi",
+                "modules": [
+                    "discord.js",
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js')\r\nconst db = require('quick.db')\r\n\r\nexports.run = async(client, message, args) => {\r\n  if (!message.member.hasPermission(\"ADMINISTRATOR\")) return message.channel.send(`Bu komutu kullanabilmek için \"\\`Yönetici\\`\" yetkisine sahip olmalısın.`);\r\n\r\nlet logk = message.mentions.channels.first();\r\nlet logkanal = await db.fetch(`log_${message.guild.id}`)\r\n  \r\n  if (args[0] === \"sıfırla\" || args[0] === \"kapat\") {\r\n    if(!logkanal) return message.channel.send(`Modlog Kanalı Zaten ayarlı değil.`);\r\n    db.delete(`log_${message.guild.id}`)\r\n   message.channel.send(`ModLog Kanalı başarıyla sıfırlandı.`);\r\n    return\r\n  }\r\nif (!logk) return message.channel.send(`Yanlış Kullanım Doğru Kullanım: y!mod-log #kanal`);\r\n\r\ndb.set(`log_${message.guild.id}`, logk.id)\r\n\r\nmessage.channel.send(`Mod-Log kanalı başarıyla ${logk} olarak ayarlandı.`);\r\n message.react('791593234353618954')\r\n\r\n};\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: ['modlog'],\r\n    permLevel: 3 \r\n };\r\n\r\nexports.help = {\r\n    name: 'mod-log',\r\n    description: '',\r\n    usage: ''\r\n};",
+                "komutlar_code": "client.on(\"messageDelete\", async message => {\r\n  if (message.author.bot || message.channel.type == \"dm\") return;\r\n\r\n  let log = message.guild.channels.cache.get(\r\n    await db.fetch(`log_${message.guild.id}`)\r\n  );\r\n\r\n  if (!log) return;\r\n\r\n  const embed = new Discord.MessageEmbed()\r\n\r\n    .setTitle(message.author.username + \" | Mesaj Silindi\")\r\n\r\n    .addField(\"Kullanıcı: \", message.author)\r\n\r\n    .addField(\"Kanal: \", message.channel)\r\n\r\n    .addField(\"Mesaj: \", \"\" + message.content + \"\");\r\n\r\n  log.send(embed);\r\n});\r\n\r\nclient.on(\"messageUpdate\", async (oldMessage, newMessage) => {\r\n  let modlog = await db.fetch(`log_${oldMessage.guild.id}`);\r\n\r\n  if (!modlog) return;\r\n\r\n  let embed = new Discord.MessageEmbed()\r\n\r\n    .setAuthor(oldMessage.author.username, oldMessage.author.avatarURL())\r\n\r\n    .addField(\"**Eylem**\", \"Mesaj Düzenleme\")\r\n\r\n    .addField(\r\n      \"**Mesajın sahibi**\",\r\n      `<@${oldMessage.author.id}> === **${oldMessage.author.id}**`\r\n    )\r\n\r\n    .addField(\"**Eski Mesajı**\", `${oldMessage.content}`)\r\n\r\n    .addField(\"**Yeni Mesajı**\", `${newMessage.content}`)\r\n\r\n    .setTimestamp()\r\n\r\n    .setColor(\"RANDOM\")\r\n\r\n    .setFooter(\r\n      `Sunucu: ${oldMessage.guild.name} - ${oldMessage.guild.id}`,\r\n      oldMessage.guild.iconURL()\r\n    )\r\n\r\n    .setThumbnail(oldMessage.guild.iconURL);\r\n\r\n  client.channels.cache.get(modlog).send(embed);\r\n});\r\n\r\nclient.on(\"channelCreate\", async channel => {\r\n  let modlog = await db.fetch(`log_${channel.guild.id}`);\r\n\r\n  if (!modlog) return;\r\n\r\n  const entry = await channel.guild\r\n    .fetchAuditLogs({ type: \"CHANNEL_CREATE\" })\r\n    .then(audit => audit.entries.first());\r\n\r\n  let kanal;\r\n\r\n  if (channel.type === \"text\") kanal = `<#${channel.id}>`;\r\n\r\n  if (channel.type === \"voice\") kanal = `\\`${channel.name}\\``;\r\n\r\n  let embed = new Discord.MessageEmbed()\r\n\r\n    .setAuthor(entry.executor.username, entry.executor.avatarURL())\r\n\r\n    .addField(\"**Eylem**\", \"Kanal Oluşturma\")\r\n\r\n    .addField(\"**Kanalı Oluşturan Kişi**\", `<@${entry.executor.id}>`)\r\n\r\n    .addField(\"**Oluşturduğu Kanal**\", `${kanal}`)\r\n\r\n    .setTimestamp()\r\n\r\n    .setColor(\"RANDOM\")\r\n\r\n    .setFooter(\r\n      `Sunucu: ${channel.guild.name} - ${channel.guild.id}`,\r\n      channel.guild.iconURL()\r\n    )\r\n\r\n    .setThumbnail(channel.guild.iconUR);\r\n\r\n  client.channels.cache.get(modlog).send(embed);\r\n});\r\n\r\nclient.on(\"channelDelete\", async channel => {\r\n  let modlog = await db.fetch(`log_${channel.guild.id}`);\r\n\r\n  if (!modlog) return;\r\n\r\n  const entry = await channel.guild\r\n    .fetchAuditLogs({ type: \"CHANNEL_DELETE\" })\r\n    .then(audit => audit.entries.first());\r\n\r\n  let embed = new Discord.MessageEmbed()\r\n\r\n    .setAuthor(entry.executor.username, entry.executor.avatarURL())\r\n\r\n    .addField(\"**Eylem**\", \"Kanal Silme\")\r\n\r\n    .addField(\"**Kanalı Silen Kişi**\", `<@${entry.executor.id}>`)\r\n\r\n    .addField(\"**Silinen Kanal**\", `\\`${channel.name}\\``)\r\n\r\n    .setTimestamp()\r\n\r\n    .setColor(\"RANDOM\")\r\n\r\n    .setFooter(\r\n      `Sunucu: ${channel.guild.name} - ${channel.guild.id}`,\r\n      channel.guild.iconURL()\r\n    )\r\n\r\n    .setThumbnail(channel.guild.iconURL);\r\n\r\n  client.channels.cache.get(modlog).send(embed);\r\n});\r\n\r\nclient.on(\"roleCreate\", async role => {\r\n  let modlog = await db.fetch(`log_${role.guild.id}`);\r\n\r\n  if (!modlog) return;\r\n\r\n  const entry = await role.guild\r\n    .fetchAuditLogs({ type: \"ROLE_CREATE\" })\r\n    .then(audit => audit.entries.first());\r\n\r\n  let embed = new Discord.MessageEmbed()\r\n\r\n    .setAuthor(entry.executor.username, entry.executor.avatarURL())\r\n\r\n    .addField(\"**Eylem**\", \"Rol Oluşturma\")\r\n\r\n    .addField(\"**Rolü oluşturan kişi**\", `<@${entry.executor.id}>`)\r\n\r\n    .addField(\"**Oluşturulan rol**\", `\\`${role.name}\\` **=** \\`${role.id}\\``)\r\n\r\n    .setTimestamp()\r\n\r\n    .setFooter(\r\n      `Sunucu: ${role.guild.name} - ${role.guild.id}`,\r\n      role.guild.iconURL\r\n    )\r\n\r\n    .setColor(\"RANDOM\")\r\n\r\n    .setThumbnail(role.guild.iconURL);\r\n\r\n  client.channels.cache.get(modlog).send(embed);\r\n});\r\n\r\nclient.on(\"roleDelete\", async role => {\r\n  let modlog = await db.fetch(`log_${role.guild.id}`);\r\n\r\n  if (!modlog) return;\r\n\r\n  const entry = await role.guild\r\n    .fetchAuditLogs({ type: \"ROLE_DELETE\" })\r\n    .then(audit => audit.entries.first());\r\n\r\n  let embed = new Discord.MessageEmbed()\r\n\r\n    .setAuthor(entry.executor.username, entry.executor.avatarURL())\r\n\r\n    .addField(\"**Eylem**\", \"Rol Silme\")\r\n\r\n    .addField(\"**Rolü silen kişi**\", `<@${entry.executor.id}>`)\r\n\r\n    .addField(\"**Silinen rol**\", `\\`${role.name}\\` **=** \\`${role.id}\\``)\r\n\r\n    .setTimestamp()\r\n\r\n    .setFooter(\r\n      `Sunucu: ${role.guild.name} - ${role.guild.id}`,\r\n      role.guild.iconURL\r\n    )\r\n\r\n    .setColor(\"RANDOM\")\r\n\r\n    .setThumbnail(role.guild.iconURL);\r\n\r\n  client.channels.cache.get(modlog).send(embed);\r\n});\r\n\r\nclient.on(\"emojiCreate\", async emoji => {\r\n  let modlog = await db.fetch(`log_${emoji.guild.id}`);\r\n\r\n  if (!modlog) return;\r\n\r\n  const entry = await emoji.guild\r\n    .fetchAuditLogs({ type: \"EMOJI_CREATE\" })\r\n    .then(audit => audit.entries.first());\r\n\r\n  let embed = new Discord.MessageEmbed()\r\n\r\n    .setAuthor(entry.executor.username, entry.executor.avatarURL())\r\n\r\n    .addField(\"**Eylem**\", \"Emoji Oluşturma\")\r\n\r\n    .addField(\"**Emojiyi oluşturan kişi**\", `<@${entry.executor.id}>`)\r\n\r\n    .addField(\"**Oluşturulan emoji**\", `${emoji} - İsmi: \\`${emoji.name}\\``)\r\n\r\n    .setTimestamp()\r\n\r\n    .setColor(\"RANDOM\")\r\n\r\n    .setFooter(\r\n      `Sunucu: ${emoji.guild.name} - ${emoji.guild.id}`,\r\n      emoji.guild.iconURL\r\n    )\r\n\r\n    .setThumbnail(emoji.guild.iconURL);\r\n\r\n  client.channels.cache.get(modlog).send(embed);\r\n});\r\n\r\nclient.on(\"emojiDelete\", async emoji => {\r\n  let modlog = await db.fetch(`log_${emoji.guild.id}`);\r\n\r\n  if (!modlog) return;\r\n\r\n  const entry = await emoji.guild\r\n    .fetchAuditLogs({ type: \"EMOJI_DELETE\" })\r\n    .then(audit => audit.entries.first());\r\n\r\n  let embed = new Discord.MessageEmbed()\r\n\r\n    .setAuthor(entry.executor.username, entry.executor.avatarURL())\r\n\r\n    .addField(\"**Eylem**\", \"Emoji Silme\")\r\n\r\n    .addField(\"**Emojiyi silen kişi**\", `<@${entry.executor.id}>`)\r\n\r\n    .addField(\"**Silinen emoji**\", `${emoji}`)\r\n\r\n    .setTimestamp()\r\n\r\n    .setFooter(\r\n      `Sunucu: ${emoji.guild.name} - ${emoji.guild.id}`,\r\n      emoji.guild.iconURL\r\n    )\r\n\r\n    .setColor(\"RANDOM\")\r\n\r\n    .setThumbnail(emoji.guild.iconURL);\r\n\r\n  client.channels.cache.get(modlog).send(embed);\r\n});\r\n\r\nclient.on(\"emojiUpdate\", async (oldEmoji, newEmoji) => {\r\n  let modlog = await db.fetch(`log_${oldEmoji.guild.id}`);\r\n\r\n  if (!modlog) return;\r\n\r\n  const entry = await oldEmoji.guild\r\n    .fetchAuditLogs({ type: \"EMOJI_UPDATE\" })\r\n    .then(audit => audit.entries.first());\r\n\r\n  let embed = new Discord.MessageEmbed()\r\n\r\n    .setAuthor(entry.executor.username, entry.executor.avatarURL())\r\n\r\n    .addField(\"**Eylem**\", \"Emoji Güncelleme\")\r\n\r\n    .addField(\"**Emojiyi güncelleyen kişi**\", `<@${entry.executor.id}>`)\r\n\r\n    .addField(\r\n      \"**Güncellenmeden önceki emoji**\",\r\n      `${oldEmoji} - İsmi: \\`${oldEmoji.name}\\``\r\n    )\r\n\r\n    .addField(\r\n      \"**Güncellendikten sonraki emoji**\",\r\n      `${newEmoji} - İsmi: \\`${newEmoji.name}\\``\r\n    )\r\n\r\n    .setTimestamp()\r\n\r\n    .setColor(\"RANDOM\")\r\n\r\n    .setFooter(\r\n      `Sunucu: ${oldEmoji.guild.name} - ${oldEmoji.guild.id}`,\r\n      oldEmoji.guild.iconURL\r\n    )\r\n\r\n    .setThumbnail(oldEmoji.guild.iconURL);\r\n\r\n  client.channels.cache.get(modlog).send(embed);\r\n});\r\n\r\nclient.on(\"guildBanAdd\", async (guild, user) => {\r\n  let modlog = await db.fetch(`log_${guild.id}`);\r\n\r\n  if (!modlog) return;\r\n\r\n  const entry = await guild\r\n    .fetchAuditLogs({ type: \"MEMBER_BAN_ADD\" })\r\n    .then(audit => audit.entries.first());\r\n\r\n  let embed = new Discord.MessageEmbed()\r\n\r\n    .setAuthor(entry.executor.username, entry.executor.avatarURL())\r\n\r\n    .addField(\"**Eylem**\", \"Yasaklama\")\r\n\r\n    .addField(\"**Kullanıcıyı yasaklayan yetkili**\", `<@${entry.executor.id}>`)\r\n\r\n    .addField(\"**Yasaklanan kullanıcı**\", `**${user.tag}** - ${user.id}`)\r\n\r\n    .addField(\"**Yasaklanma sebebi**\", `${entry.reason}`)\r\n\r\n    .setTimestamp()\r\n\r\n    .setColor(\"RANDOM\")\r\n\r\n    .setFooter(`Sunucu: ${guild.name} - ${guild.id}`, guild.iconURL)\r\n\r\n    .setThumbnail(guild.iconURL);\r\n\r\n  client.channels.cache.get(modlog).send(embed);\r\n});\r\n\r\nclient.on(\"guildBanRemove\", async (guild, user) => {\r\n  let modlog = await db.fetch(`log_${guild.id}`);\r\n\r\n  if (!modlog) return;\r\n\r\n  const entry = await guild\r\n    .fetchAuditLogs({ type: \"MEMBER_BAN_REMOVE\" })\r\n    .then(audit => audit.entries.first());\r\n\r\n  let embed = new Discord.MessageEmbed()\r\n\r\n    .setAuthor(entry.executor.username, entry.executor.avatarURL())\r\n\r\n    .addField(\"**Eylem**\", \"Yasak kaldırma\")\r\n\r\n    .addField(\"**Yasağı kaldıran yetkili**\", `<@${entry.executor.id}>`)\r\n\r\n    .addField(\"**Yasağı kaldırılan kullanıcı**\", `**${user.tag}** - ${user.id}`)\r\n\r\n    .setTimestamp()\r\n    .setColor(\"RANDOM\")\r\n    .setFooter(`Sunucu: ${guild.name} - ${guild.id}`, guild.iconURL)\r\n\r\n    .setThumbnail(guild.iconURL);\r\n\r\n  client.channels.cache.get(modlog).send(embed);\r\n});",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Sa-As": {
+                "isim": "V12 Sa-As",
+                "id": "lSM1U3BWiD",
+                "desc": "Ayarlanabilir Sa-As Sistemi",
+                "modules": [
+                    "discord.js",
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const db = require('quick.db')\r\nconst Discord = require('discord.js')\r\n\r\nexports.run = async (bot, message, args) => {\r\n\r\n  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(':no_entry: Bu komudu kullanabilmek için `Sunucuyu Yönet` yetkisine sahip olmalısın!')\r\n  if (!args[0]) return message.channel.send(':no_entry: Sa-as yazısını açmak için; `b?sa-as aç veya kapat`')\r\n\r\n  if (args[0] == 'aç') {\r\n    db.set(`saas_${message.guild.id}`, 'açık')\r\n      message.channel.send(`**Sa-As Sistemi Açıldı** `)\r\n   \r\n  }\r\n  if (args[0] == 'kapat') {\r\n    db.set(`saas_${message.guild.id}`, 'kapali')\r\n      message.channel.send(`**Sa-As Sistemi Kapandı** `)\r\n   \r\n  }\r\n\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"saas\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'sa-as',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "client.on(\"message\", async (msg, member, guild) => {\r\n  let i = await db.fetch(`saas_${msg.guild.id}`);\r\n  if (i === \"açık\") {\r\n    if (msg.content.toLowerCase() === \"sa\") {\r\n      msg.reply(\"**Aleyküm Selam Hoşgeldin**\");\r\n    }\r\n  }\r\n});\r\n\r\nclient.on(\"message\", async (msg, member, guild) => {\r\n  let i = await db.fetch(`saas_${msg.guild.id}`);\r\n  if (i === \"açık\") {\r\n    if (msg.content.toLowerCase() === \"hi\") {\r\n      msg.reply(\"**Hi welcome**\");\r\n    }\r\n  }\r\n});\r\n\r\nclient.on(\"message\", async (msg, member, guild) => {\r\n  let i = await db.fetch(`saas_${msg.guild.id}`);\r\n  if (i === \"açık\") {\r\n    if (msg.content.toLowerCase() === \"sea\") {\r\n      msg.reply(\"**Aleyküm Selam Hoşgeldin**\");\r\n    }\r\n  }\r\n});",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Fbi": {
+                "isim": "V12 Fbi",
+                "id": "xsmvd7sW0o",
+                "desc": "Fbi Gifi Atar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require(\"discord.js\")\r\n\r\n\r\nexports.run = async (client, message, args) => {\r\n  \r\n  const fbi = new Discord.MessageEmbed()\r\n  .setColor(\"RED\")\r\n  .setImage(\"https://media1.giphy.com/media/QUY2pzDAKVpX3QacCg/200.gif\")\r\n  .setTitle(\"FBİ OPEN DO DOOR!\") \r\n  message.channel.send(fbi)\r\n}\r\n\r\n\r\nexports.conf = {\r\n  enabled: true, \r\n  guildOnly: false, \r\n   aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"fbi\",\r\n  description: \"\",\r\n  usage:\"\"\r\n}",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Elyazısı": {
+                "isim": "V12 Elyazısı",
+                "id": "sNGbNVI65l",
+                "desc": "Yazdığınız Yazıyı Elyazısı Şeklinde Yazar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\")\r\n\r\nconst mapping = {\r\n    ' ': '   ',\r\n    '0': '0',\r\n    '1': '1',\r\n    '2': '2',\r\n    '3': '3',\r\n    '4': '4',\r\n    '5': '5',\r\n    '6': '6',\r\n    '7': '7',\r\n    '8': '8',\r\n    '9': '9',\r\n    '!': '!',\r\n    '?': '?',\r\n    '#': '#',\r\n    '*': '*',\r\n    'a': '𝓪',\r\n    'b': '𝓫',\r\n    'c': '𝓬',\r\n    'd': '𝓭',\r\n    'e': '𝓮',\r\n    'f': '𝓯',\r\n    'g': '𝓰',\r\n    'h': '𝓱',\r\n    'i': '𝓲',\r\n    'j': '𝓳',\r\n    'k': '𝓴',\r\n    'l': '𝓵',\r\n    'm': '𝓶',\r\n    'n': '𝓷',\r\n    'o': '𝓸',\r\n    'p': '𝓹',\r\n    'q': '𝓺',\r\n    'r': '𝓻',\r\n    's': '𝓼',\r\n    't': '𝓽',\r\n    'u': '𝓾',\r\n    'v': '𝓿',\r\n    'w': '𝔀',\r\n    'x': '𝔁',\r\n    'y': '𝔂',\r\n    'z': '𝔃',\r\n    'A': '𝓐',\r\n    'B': '𝓑',\r\n    'C': '𝓒',\r\n    'D': '𝓓',\r\n    'E': '𝓔',\r\n    'F': '𝓕',\r\n    'G': '𝓖',\r\n    'H': '𝓗',\r\n    'I': '𝓘',\r\n    'J': '𝓙',\r\n    'K': '𝓚',\r\n    'L': '𝓛',\r\n    'M': '𝓜',\r\n    'N': '𝓝',\r\n    'O': '𝓞',\r\n    'P': '𝓟',\r\n    'Q': '𝓠',\r\n    'R': '𝓡',\r\n    'S': '𝓢',\r\n    'T': '𝓣',\r\n    'U': '𝓤',\r\n    'V': '𝓥',\r\n    'W': '𝓦',\r\n    'X': '𝓧',\r\n    'Y': '𝓨',\r\n    'Z': '𝓩'\r\n  };\r\n\r\nexports.run = async (client, message, args) => {\r\n\r\n      if (args.length < 1) {\r\n      message.channel.send('Güzel bi yazı yazmam için önce yazdırmak istediğin şeyi yazman gerek :)');\r\n  }\r\n  message.channel.send(\r\n      args.join(' ')\r\n          .split('')\r\n          .map(f => mapping[f] || f)\r\n          .join('')\r\n  );\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'elyazısı',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Afk": {
+                "isim": "V12 Afk",
+                "id": "WuyLyX7XSt",
+                "desc": "Afk Olursunuz",
+                "modules": [
+                    "discord.js",
+                    "quick.db",
+                    "parse-ms"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db');\r\n\r\nexports.run = async(client, message, args) => {\r\n   let sebep = args.slice(0).join(' ')\r\n   let user = message.author\r\n   if(!sebep) return message.channel.send('AFK olma sebebini belirtmelisin')\r\n   else {\r\n       db.set(`afk_${user.id}`, sebep)\r\n       db.set(`afksüre_${user.id}`, Date.now())\r\n\r\n       message.channel.send('Başarıyla AFK moduna giriş yaptın seni etiketleyenlere **'+ sebep + '** sebebiyle afk olduğunu söyleyeceğim')\r\n   }\r\n}\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases:[],\r\n    permlevel: 0\r\n};\r\n\r\nexports.help = {\r\n    name: \"afk\"\r\n}",
+                "komutlar_code": "client.on(\"message\", async message => {\r\n  const ms = require(\"parse-ms\");\r\n\r\n  if (message.author.bot) return;\r\n  if (!message.guild) return;\r\n  if (message.content.includes(`${prefix}afk`)) return;\r\n\r\n  if (await db.fetch(`afk_${message.author.id}`)) {\r\n    var user = message.mentions.users.first();\r\n    let zamans = await db.fetch(`afksüre_${message.author.id}`);\r\n    let timeObj = ms(Date.now() - zamans);\r\n    message.reply(\r\n      `Artık AFK değilsin, **${timeObj.hours}** Saat **${timeObj.minutes}** Dakika **${timeObj.seconds}** Saniyedir AFKydın`\r\n    );\r\n    db.delete(`afk_${message.author.id}`);\r\n    db.delete(`afksüre_${message.author.id}`);\r\n  }\r\n\r\n  var user = message.mentions.users.first();\r\n  if (!user) return;\r\n  var REASON = await db.fetch(`afk_${user.id}`);\r\n\r\n  if (REASON) {\r\n    let zamant = await db.fetch(`afksüre_${user.id}`);\r\n    let timeObj = ms(Date.now() - zamant);\r\n    const yilmaz = new Discord.MessageEmbed()\r\n      .setDescription(`<@${user.id}> kullanıcısı AFK `)\r\n      .setColor(\"2F3136\")\r\n      .addField(`Saat :`, `${timeObj.hours}`, true)\r\n      .addField(`Dakika :`, `${timeObj.minutes}`, true)\r\n      .addField(`Saniye :`, `${timeObj.seconds}`, true)\r\n      .setThumbnail(user.avatarURL());\r\n    message.channel.send(yilmaz);\r\n  }\r\n});",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Yavaşmod": {
+                "isim": "V12 Yavaşmod",
+                "id": "DaNWj5O568",
+                "desc": "Kanala Yavaşmod Belirler",
+                "modules": [
+                    "discord.js",
+                    "quick.db",
+                    "parse-ms",
+                    "node-superfetch"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\n\r\nexports.run = async(client, msg, args) => {\r\nif (msg.channel.type !== \"text\") return;\r\n  \r\nconst limit = args[0];\r\n  \r\n  if(!limit) {\r\n    \r\n              var embed = new Discord.MessageEmbed()\r\n                .setDescription(`Yazma sınırını süresini kaç saniye olarak ayarlamak istediğinizi yazınız!`)\r\n              .setColor(\"RANDOM\")\r\n            msg.channel.send({embed: embed})\r\n            return\r\n          }\r\n  \r\nif (isNaN(limit)) {\r\n  var s = new Discord.MessageEmbed()\r\n  .setDescription(\"Yazma sınırını süresini kaç saniye olarak ayarlamak istediğinizi yazınız!\")\r\n  .setColor(\"RANDOM\")\r\n  msg.channel.send({embed: s});\r\n    return\r\n}\r\n  \r\nif (limit > 100) {\r\n  var x = new Discord.MessageEmbed()\r\n  .setDescription(\"Yazma sınırı süresi limiti maksimum **100** saniye olabilir!\")\r\n  .setColor(\"RANDOM\")\r\n  msg.channel.send({embed: x});\r\n    return\r\n}\r\n    var e = new Discord.MessageEmbed()\r\n    .setDescription(`Yazma sınırı süresi başarıyla **${limit}** saniye olarak başarılıyla ayarlanmıştır!`)\r\n    .setColor(\"RANDOM\")\r\n    msg.channel.send({embed: e})\r\n  \r\nvar request = require('request');\r\nrequest({\r\n    url: `https://discordapp.com/api/v7/channels/${msg.channel.id}`,\r\n    method: \"PATCH\",\r\n    json: {\r\n        rate_limit_per_user: limit\r\n    },\r\n    headers: {\r\n        \"Authorization\": `Bot ${client.token}`\r\n    },\r\n})};\r\n  exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 3\r\n};\r\n\r\nexports.help = {\r\n  name: 'yavaşmod',\r\n  description: '',\r\n  usage: '',\r\n};",
+                "komutlar_code": "client.on(\"message\", async (msg, user) => {\r\n  const request = require(\"node-superfetch\");\r\n  const db = require(\"quick.db\");\r\n  const ms = require(\"parse-ms\");\r\n  let zaman = db.fetch(`${msg.guild.id}.slowmode`);\r\n  if (zaman === undefined) zaman = 0;\r\n  let timeout = zaman;\r\n  let dakdest = await db.fetch(`slowmodee_${msg.author.id}`);\r\n\r\n  if (dakdest !== null && timeout - (Date.now() - dakdest) > 0) {\r\n    let time = ms(timeout - (Date.now() - dakdest));\r\n    msg.delete();\r\n    msg.channel\r\n      .send(\"**Bu kanalda yavaş mod açık mesaj atmadan beklemen gerek!**\")\r\n      .then(message => message.delete(2000));\r\n  } else {\r\n    if (msg.content.length > 0) {\r\n      db.set(`slowmodee_${msg.author.id}`, Date.now());\r\n    }\r\n  }\r\n});",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Öneri": {
+                "isim": "V12 Öneri",
+                "id": "6d6S37B7kT",
+                "desc": "Öneri Atarsınız",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nexports.run = async(client, message, args) => {\r\n    let type = args.slice(0).join(' ');\r\n    if (type.length < 1) return message.channel.send('Doğru Kullanım : b?öneri öneriniz')\r\nconst embed = new Discord.MessageEmbed()\r\n.setColor('#00ff00')\r\n.setDescription('Öneriniz Başarıyla İletildi \\nEn Yakın Zamanda İncelenecek.')\r\nmessage.channel.send(embed)\r\nconst embed2 = new Discord.MessageEmbed()\r\n.setColor(\"#ff0009\")\r\n.setDescription(`**${message.author.tag}** adlı kullanıcının **önerisi;**`)\r\n.addField(`**Gönderen Kişinin Bilgileri**`, `:white_small_square: Kullanıcı ID: ${message.author.id}\\n:white_small_square: Kullanıcı Adı: ${message.author.username}\\n:white_small_square: Kullanıcı Tagı: ${message.author.discriminator}`)\r\n.addField(\"**Gönderilen Öneri**\", type)\r\n.setThumbnail(message.author.avatarURL)\r\nclient.channels.cache.get('791939069235167283').send(embed2);  //önerinin gideceği kanal ıd\r\n};\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: [],\r\n  permLevel: 0\r\n}\r\nexports.help = {\r\n    name: 'öneri',\r\n    description: '',\r\n    usage: ''\r\n}",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Yapımcım": {
+                "isim": "V12 Yapımcım",
+                "id": "yAEA7rrF85",
+                "desc": "Bot Yapımcısını Gösterir",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const discord = require('discord.js')\r\nexports.run = async(client, message, args) => {\r\nconst wizard = new discord.MessageEmbed()\r\n.setAuthor(client.user.username, client.user.avatarURL())\r\n.setTitle(`${client.user.username} - Yapımcım`)\r\n.setColor('RANDOM')\r\n.addField(`İşte Benim Yapımcım `, `<@746343245034029096> / ɱႦ ɱЯBaşkan#7777`, true)\r\n.setThumbnail(client.user.avatarURL())\r\n.setFooter(`Komut ${message.author.tag} Tarafından Kullanıldı!`)\r\nmessage.channel.send(wizard)\r\n}\r\nexports.conf = {\r\n  name: true,\r\n  guildonly: false,\r\n  aliases: [],\r\n  permlevel: 0\r\n}\r\nexports.help = {\r\n  name: 'yapımcım'\r\n}",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Tersyazı": {
+                "isim": "V12 Tersyazı",
+                "id": "TC3ds2U9jJ",
+                "desc": "Yazdığınız Yazıyı Ters Şekilde Yazar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const discord = require('discord.js')\r\nexports.run = function(client, message, args,params) {\r\n\r\n  if (args.length < 1) {\r\n    return message.reply('Doğru Kullanım y!tersyazı YılmazBOT')\r\n  }\r\n   \r\nmessage.channel.send(args.join(' ').split('').reverse().join(''))\r\n};\r\n\r\nexports.conf = {\r\n  aliases: [],\r\n  enabled: true,\r\n  guildOnly: false,\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'tersyazı',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/30/2020"
+            },
+            "V12 Bilekgüreşi": {
+                "isim": "V12 Bilekgüreşi",
+                "id": "r7wl9kjxrp",
+                "desc": "Bilekgüreşi Oynarsınız",
+                "modules": [
+                    "discord.js",
+                    "common-tags"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst { stripIndents } = require('common-tags');\r\nconst { randomRange, verify } = require('../util/Util.js');\r\nexports.run = async (client, message, args) => {\r\n  \r\n  this.fighting = new Set();\r\n  \r\n\tlet opponent = message.mentions.users.first()\r\n\tif (!opponent) return message.reply(\"Oynamak istediğin kişiyi etiketlemelisin!\")\r\n  \r\n  if (opponent.bot) return message.reply('Botlar ile oynayamazsın!');\r\n  if (opponent.id === message.author.id) return message.reply('Kendin ile Bilek Güreşi Atamazsın');\r\n\t\tif (this.fighting.has(message.channel.id)) return message.reply('Kanal başına sadece bir Bilek Güreşi meydana gelebilir.');\r\n\t\tthis.fighting.add(message.channel.id);\r\n\t\ttry {\r\n\t\t\tif (!opponent.bot) {\r\n                await message.channel.send(`${opponent}, Bilek Güreşi isteği geldi. Bilek Güreşini kabul ediyor musun? (\\`evet\\` veya \\`hayir\\` olarak cevap veriniz.)`);\r\n\t\t\t\tconst verification = await verify(message.channel, opponent);\r\n\t\t\t\tif (!verification) {\r\n\t\t\t\t\tthis.fighting.delete(message.channel.id);\r\n\t\t\t\t\treturn message.channel.send(`Bilek Güreşi kabul edilmedi...`);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tlet userHP = 100;\r\n\t\t\tlet oppoHP = 100;\r\n\t\t\tlet userTurn = false;\r\n\t\t\tlet guard = false;\r\n\t\t\tconst reset = (changeGuard = true) => {\r\n\t\t\t\tuserTurn = !userTurn;\r\n\t\t\t\tif (changeGuard && guard) guard = false;\r\n\t\t\t};\r\n\t\t\tconst dealDamage = damage => {\r\n\t\t\t\tif (userTurn) oppoHP -= damage;\r\n\t\t\t\telse userHP -= damage;\r\n\t\t\t};\r\n\t\t\tconst forfeit = () => {\r\n\t\t\t\tif (userTurn) userHP = 0;\r\n\t\t\t\telse oppoHP = 0;\r\n\t\t\t};\r\n\t\t\twhile (userHP > 0 && oppoHP > 0) { // eslint-disable-line no-unmodified-loop-condition\r\n\t\t\t\tconst user = userTurn ? message.author : opponent;\r\n\t\t\t\tlet choice;\r\n\t\t\t\tif (!opponent.bot || (opponent.bot && userTurn)) {\r\n\t\t\t\t\tawait message.channel.send(stripIndents`\r\n\t\t\t\t\t\t${user}, ne yapmak istersin? \\`bastır\\`, \\`diren\\`, \\`yüklen\\`, veya \\`pes et\\`?\r\n\t\t\t\t\t\t**${message.author.username}**: ${userHP} :heartpulse:\r\n\t\t\t\t\t\t**${opponent.username}**: ${oppoHP} :heartpulse:\r\n\t\t\t\t\t`);\r\n\t\t\t\t\tconst filter = res =>\r\n\t\t\t\t\t\tres.author.id === user.id && ['bastır', 'diren', 'yüklen', 'pes et'].includes(res.content.toLowerCase());\r\n\t\t\t\t\tconst turn = await message.channel.awaitMessages(filter, {\r\n\t\t\t\t\t\tmax: 1,\r\n\t\t\t\t\t\ttime: 30000\r\n\t\t\t\t\t});\r\n\t\t\t\t\tif (!turn.size) {\r\n\t\t\t\t\t\tawait message.reply(`Üzgünüm ama, süre doldu!`);\r\n\t\t\t\t\t\treset();\r\n\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t}\r\n\t\t\t\t\tchoice = turn.first().content.toLowerCase();\r\n\t\t\t\t} else {\r\n\t\t\t\t\tconst choices = ['bastır', 'diren', 'yüklen'];\r\n\t\t\t\t\tchoice = choices[Math.floor(Math.random() * choices.length)];\r\n\t\t\t\t}\r\n\t\t\t\tif (choice === 'bastır') {\r\n\t\t\t\t\tconst damage = Math.floor(Math.random() * (guard ? 5 : 20)) + 1;\r\n\t\t\t\t\tawait message.channel.send(`${user}, **${damage}** kadar bileğini zorladı!`);\r\n\t\t\t\t\tdealDamage(damage);\r\n\t\t\t\t\treset();\r\n\t\t\t\t} else if (choice === 'diren') {\r\n\t\t\t\t\tawait message.channel.send(`${user}, rakibinin bileğini bükmeye çalışmaktan vazgeçip kendi bileğini korudu!`);\r\n\t\t\t\t\tguard = true;\r\n\t\t\t\t\treset(false);\r\n\t\t\t\t} else if (choice === 'yüklen') {\r\n\t\t\t\t\tconst miss = Math.floor(Math.random() * 4);\r\n\t\t\t\t\tif (!miss) {\r\n\t\t\t\t\t\tconst damage = randomRange(100, guard ? 20 : 80);\r\n\t\t\t\t\t\tawait message.channel.send(`${user}, vücudundan yeterli miktarda destek aldın ve **${damage}** rakibinin bileğini masaya kadar düşürdün!!`);\r\n\t\t\t\t\t\tdealDamage(damage);\r\n\t\t\t\t\t} else {\r\n\t\t\t\t\t\tawait message.channel.send(`${user}, bileğin yorgun olduğu için rakibinin bileğine yüklenemedin`);\r\n\t\t\t\t\t}\r\n\t\t\t\t\treset();\r\n\t\t\t\t} else if (choice === 'pes et') { \r\n\t\t\t\t\tawait message.channel.send(`${user}, pes etti,bükemediğin bileği öpeceksin !`);\r\n\t\t\t\t\tforfeit();\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t} else {\r\n\t\t\t\t\tawait message.reply('Ne yapmak istediğini anlamadım.');\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tthis.fighting.delete(message.channel.id);\r\n            const winner = userHP > oppoHP ? message.author : opponent;\r\n\t\t\treturn message.channel.send(`Oyun bitti! Tebrikler, **${winner}** kazandı! \\n**${message.author.username}**: ${userHP} :heartpulse: \\n**${opponent.username}**: ${oppoHP} :heartpulse:`);\r\n\t\t} catch (err) {\r\n\t\t\tthis.fighting.delete(message.channel.id);\r\n\t\t\tthrow err;\r\n\t\t}\r\n  }\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['bilekgüreşi'],\r\n  permLevel: `Yetki gerekmiyor.`\r\n};\r\nexports.help = {\r\n  name: 'bilek-güreşi',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/31/2020"
+            },
+            "V12 Kralol": {
+                "isim": "V12 Kralol",
+                "id": "Bt9yb9WrZZ",
+                "desc": "Kral Olursunuz",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message, params) => {\r\n    if (!message.guild) return;\r\n    if (message.channel.type !== 'dm') {\r\n      const baskan = new Discord.MessageEmbed()\r\n    .setAuthor(message.author.username + ' Artık Kral Oldun!')\r\n    .setColor(`RANDOM`)\r\n    .setTimestamp()\r\n    .setDescription('')\r\n    .setImage(`https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif`)\r\n    message.channel.send(baskan);\r\n    }\r\n};\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\nexports.help = {\r\n  name: 'kralol',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/31/2020"
+            },
+            "V12 Aşkölçer": {
+                "isim": "V12 Aşkölçer",
+                "id": "vxehpXMu2b",
+                "desc": "Aşkölçersini",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/a_528ae60120f47eb0e5ed2a3440e42fbb.png",
+                "main_code": "const Discord = require('discord.js');\r\nexports.run = async (client, msg, args) => {\r\n    let baskan=[\r\n      \"Aşkölçer %1 Gösteriyor.\",\r\n      \"Aşkölçer %2 Gösteriyor.\",\r\n      \"Aşkölçer %3 Gösteriyor.\",\r\n      \"Aşkölçer %4 Gösteriyor.\",\r\n      \"Aşkölçer %5 Gösteriyor.\",\r\n      \"Aşkölçer %6 Gösteriyor.\",\r\n      \"Aşkölçer %7 Gösteriyor.\",\r\n      \"Aşkölçer %8 Gösteriyor.\",\r\n      \"Aşkölçer %9 Gösteriyor.\",\r\n      \"Aşkölçer %10 Gösteriyor.\",\r\n      \"Aşkölçer %11 Gösteriyor.\",\r\n      \"Aşkölçer %12 Gösteriyor.\",\r\n      \"Aşkölçer %14 Gösteriyor.\",\r\n      \"Aşkölçer %15 Gösteriyor.\",\r\n      \"Aşkölçer %16 Gösteriyor.\",\r\n      \"Aşkölçer %18 Gösteriyor.\",\r\n      \"Aşkölçer %19 Gösteriyor.\",\r\n      \"Aşkölçer %20 Gösteriyor.\",\r\n      \"Aşkölçer %29 Gösteriyor.\",\r\n      \"Aşkölçer %31 Gösteriyor.(hehehhehheeeh)\",\r\n      \"Aşkölçer %32 Gösteriyor.\",\r\n      \"Aşkölçer %34 Gösteriyor.\",\r\n      \"Aşkölçer %35 Gösteriyor.\",\r\n      \"Aşkölçer %36 Gösteriyor.\",\r\n      \"Aşkölçer %37 Gösteriyor.\",\r\n      \"Aşkölçer %38 Gösteriyor.\",\r\n      \"Aşkölçer %39 Gösteriyor.\",\r\n      \"Aşkölçer %40 Gösteriyor.\",\r\n      \"Aşkölçer %41 Gösteriyor.\",\r\n      \"Aşkölçer %42 Gösteriyor.\",\r\n      \"Aşkölçer %43 Gösteriyor.\",\r\n      \"Aşkölçer %55 Gösteriyor.\",\r\n      \"Aşkölçer %57 Gösteriyor.\",\r\n      \"Aşkölçer %59 Gösteriyor.\",\r\n      \"Aşkölçer %60 Gösteriyor.\",\r\n      \"Aşkölçer %62 Gösteriyor.\",\r\n      \"Aşkölçer %63 Gösteriyor.\",\r\n      \"Aşkölçer %64 Gösteriyor.\",\r\n      \"Aşkölçer %65 Gösteriyor.\",\r\n      \"Aşkölçer %66 Gösteriyor.\",\r\n      \"Aşkölçer %69 Gösteriyor.\",\r\n      \"Aşkölçer %70 Gösteriyor.\",\r\n      \"Aşkölçer %74 Gösteriyor.\",\r\n      \"Aşkölçer %75 Gösteriyor.\",\r\n      \"Aşkölçer %76 Gösteriyor.\",\r\n      \"Aşkölçer %77 Gösteriyor.\",\r\n      \"Aşkölçer %79 Gösteriyor.\",\r\n      \"Aşkölçer %80 Gösteriyor.\",\r\n      \"Aşkölçer %81 Gösteriyor.\",\r\n      \"Aşkölçer %82 Gösteriyor.\",\r\n      \"Aşkölçer %83 Gösteriyor.\",\r\n      \"Aşkölçer %0 Gösteriyor.\",\r\n      \"Aşkölçer %95 Gösteriyor.\",\r\n      \"Aşkölçer %99 Gösteriyor.\",\r\n      \"Aşkölçer %100 Gösteriyor.\",\r\n    ]\r\nlet yilmaz = baskan[Math.floor(Math.random() * baskan.length)]\r\nlet kerim = msg.mentions.members.first()\r\n     if (!kerim) return msg.channel.send('<a:by:752306236606906399> Kimi Sevdiğini Etiketle?') \r\n  msg.channel.send(`${msg.author}, ${kerim} İle Olan Aşkını ${yilmaz}.`)\r\n    }\r\n\r\n\r\n\r\n  exports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: [],\r\n    permLevel: 0\r\n   };\r\n\r\n  exports.help = {\r\n    name: 'aşkölçer',\r\n    description: '',\r\n    usage: ''\r\n   }",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "12/31/2020"
+            },
+            "V12 Hata Bildir": {
+                "isim": "V12 Hata Bildir",
+                "id": "pgLXpj3KsC",
+                "desc": "Hata Bildirme Kodu",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/746343245034029096/030351f5c673f5233bfe5eeb4590c0e4.png",
+                "main_code": "const Discord = require('discord.js');\r\n\r\n\r\nexports.run = function(client, message, args) {\r\n\r\n\tlet mesaj = args.slice().join(' ')\r\nif (!mesaj) return message.reply('lütfen Hata Bildirimini yazın')\r\nmessage.delete()\r\nclient.users.get(\"Kendi İD\").send(new Discord.RichEmbed()\r\n.addField('Eylem', 'Hata Bildirimi')\r\n.addField('Kullanıcı', message.author.tag)\r\n.addField('Sunucu', message.guild.name)\r\n.addField('Hata', mesaj)\r\n).then(a => message.channel.send('***Hatayı Bildirdiğiniz İçin Teşkkürler En Kısa Zamanda İncelenecektir.***'))\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"hatabildir\", \"hata-bildir\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'bildir',\r\n  description: \"\",\r\n  usage: ''\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ɱႦ ɱЯBaşkan",
+                "date": "1/5/2021"
+            },
+            "V12 ETİKET PREFİX": {
+                "isim": "V12 ETİKET PREFİX",
+                "id": "vGjWwza6bU",
+                "desc": "Etiket Prefix",
+                "modules": [
+                    "Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/690591492330225686/9e9600d3761b3ec891347a6082f8d346.png",
+                "main_code": "Yok",
+                "komutlar_code": "const prefix = ayarlar.prefix;\r\nconst prefixembed = Discord.MessageEmbed()\r\n.setColor(\"RANDOM\")\r\n.setDescription(`İşte Prefixim : ${prefix}`);\r\n\r\n\r\nclient.on('message', message => {\r\n  if (message.content === '<@BotİD>') {\r\n    message.channel.send(prefixembed);\r\n  }",
+                "kod_rank": "normal",
+                "k_adi": "! ✮ RolaX ✬ Creed",
+                "date": "2/23/2021"
+            },
+            "V12 Cs:go Kasa Aç": {
+                "isim": "V12 Cs:go Kasa Aç",
+                "id": "tWi50ajS2y",
+                "desc": "Csgo Kasası Açarsınız",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/690591492330225686/9e9600d3761b3ec891347a6082f8d346.png",
+                "main_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message) => {\r\n    let csgopng = \"https://cdn.discordapp.com/attachments/447829045376319500/516564269584744448/csgo.png\"\r\n    var kasadancikanlar = [\r\n        \"Glock-18 'Fade' (**Factory New**) \\nPrice:**298.88$**\",\r\n        \"M4A4 Poseidon (**Factory New**) \\nPrice:**216.11$**\",\r\n        \"AK-47 Fire Serpent (**Factory New**) \\nPrice:**622.62$**\",\r\n        \"M4A4 Howl (**Factory New**) \\nPrice:**1713.9$**\",\r\n        \"M4A1-S Knight (**Factory New**) \\nPrice:**272.69$**\",\r\n        \"M4A1-S Hot Rod (**Factory New**) \\nPrice:**60.88$**\",\r\n        \"AWP Medusa (**Factory New**) \\nPrice:**1582.05$**\",\r\n        \"AWP Dragon Lore (**Factory New**) \\nPrice:**1813.93$**\",\r\n        \"Bayonet 'Slaugther' (**Factory New**) \\nPrice:**230.6$**\",\r\n        \"M9 Bayonet 'Slaughter' (**Factory New**) \\nPrice:**321.3$**\",\r\n        \"Karambit 'Case Hardened' (**Factory New**) \\nPrice:**450.54$**\",\r\n        \"M9 Bayonet 'Marble Fade' (**Factory New**) \\nPrice:**413.2$**\",\r\n        \"Bayonet 'Marble Fade' (**Factory New**) \\nPrice:**288.19$**\",\r\n        \"M9 Bayonet 'Bright Water' (**Factory New**) \\nPrice:**150.5$**\",\r\n        \"Karambit 'Lore' (**Factory New**) \\nPrice:**1262.28$**\",\r\n        \"Gut Knife 'Gamma Doppler' (**Factory New**) \\nPrice:**110.56$**\",\r\n        \"Gut Knife 'Freehand' (**Factory New**) \\nPrice:**73.97$**\",\r\n        \"Glock-18 'Fade' (**Minimal Wear**) \\nPrice:**295.61$**\",\r\n        \"M4A4 Poseidon (**Minimal Wear**) \\nPrice:**198.88$**\",\r\n        \"M4A4 Poseidon (**Field-Tested**) \\nPrice:**172.92$**\",\r\n        \"AK-47 Fire Serpent (**Minimal Wear**) \\nPrice:**252.21$**\",\r\n        \"AK-47 Fire Serpent (**Field-Tested**) \\nPrice:**183.56$**\",\r\n        \"AK-47 Fire Serpent (**Well-Worn**) \\nPrice:**170.69$**\",\r\n        \"AK-47 Fire Serpent (**Battle-Scared**) \\nPrice:**104.64$**\",\r\n        \"M4A4 Howl (**Minimal Wear**) \\nPrice:**1335.36$**\",\r\n        \"M4A4 Howl (**Field-Tested**) \\nPrice:**801.08$**\",\r\n        \"M4A4 Howl (**Well-Worn**) \\nPrice:**880$**\",\r\n        \"M4A1-S Knight (**Minimal Wear**) \\nPrice:**330.01$**\",\r\n        \"M4A1-S Hot Rod (**Minimal Wear**) \\nPrice:**77.73$**\",\r\n        \"AWP Medusa (**Minimal Wear**) \\nPrice:**798$**\",\r\n        \"AWP Medusa (**Field-Tested**) \\nPrice:**677.15$**\",\r\n        \"AWP Medusa (**Well-Worn**) \\nPrice:**592.69$**\",\r\n        \"AWP Medusa (**Battle-Scarred**) \\nPrice:**580.01$**\",\r\n        \"AWP Dragon Lore (**Minimal Wear**) \\nPrice:**1608.97$**\",\r\n        \"AWP Dragon Lore (**Field-Tested**) \\nPrice:**1043.44$**\",\r\n        \"AWP Dragon Lore (**Well-Worn**) \\nPrice:**1030.83$**\",\r\n        \"AWP Dragon Lore (**Battle-Scarred**) \\nPrice:**915.29$**\",\r\n        \"Bayonet 'Slaughter' (**Minimal Wear**) \\nPrice:**187.48$**\",\r\n        \"Bayonet 'Slaughter' (**Field-Tested**) \\nPrice:**140.1$**\",\r\n        \"M9 Bayonet 'Slaughter' (**Minimal Wear**) \\nPrice:**234.07$**\", \r\n        \"M9 Bayonet 'Slaughter' (**Field-Tested**) \\nPrice:**190.26    $**\",\r\n        \"Karambit 'Case Hardened' (**Minimal Wear**) \\nPrice:**257.58$**\",\r\n        \"Karambit 'Case Hardened' (**Field-Tested**) \\nPrice:**228.7    $**\",\r\n        \"Karambit 'Case Hardened' (**Well-Worn**) \\nPrice:**195.68    $**\",\r\n        \"Karambit 'Case Hardened' (**Battle-Scarred**) \\nPrice:**182.71$**\",\r\n        \"M9 Bayonet 'Marble Fade' (**Minimal Wear**) \\nPrice:**498.15$**\",\r\n        \"Bayonet 'Marble Fade' (**Minimal Wear**) \\nPrice:**297.6$**\",\r\n        \"M9 Bayonet 'Bright Water' (**Minimal Wear**) \\nPrice**136.4$**\",\r\n        \"M9 Bayonet 'Bright Water' (**Field-Tested**) \\nPrice**115.63    $**\",\r\n        \"M9 Bayonet 'Bright Water' (**Well-Worn**) \\nPrice**102.13$**\",\r\n        \"M9 Bayonet 'Bright Water' (**Battle-Scarred**) \\nPrice**101.83$**\",\r\n        \"Karambit 'Lore' (**Minimal Wear**) \\nPrice:**748.02$**\",\r\n        \"Karambit 'Lore' (**Field-Tested**) \\nPrice:**347.65$**\",\r\n        \"Karambit 'Lore' (**Well-Worn**) \\nPrice:**348.81$**\",\r\n        \"Karambit 'Lore' (**Battle-Scarred**) \\nPrice:**244.97$**\",\r\n        \"Gut Knife 'Gamma Doppler' (**Minimal Wear**) \\nPrice:**125$**\",\r\n        \"Gut Knife 'Freehand' (**Minimal Wear**) \\nPrice:**68.82$**\",\r\n        \"Gut Knife 'Freehand' (**Field-Tested**) \\nPrice:**60.46$**\",\r\n        \"Gut Knife 'Freehand' (**Well-Worn**) \\nPrice:**64.84    $**\",\r\n        \"Gut Knife 'Freehand' (**Battle-Scarred**) \\nPrice:**52$**\",\r\n\r\n    ]\r\n    var kasadancikanlar = kasadancikanlar[Math.floor(Math.random(1) * kasadancikanlar.length)]\r\n    const embed  = new Discord.RichEmbed()\r\n    .setImage(\"https://cdn.wallpapersafari.com/40/16/8rTMh6.jpg\")\r\n    .setAuthor('Ploutos Bot', csgopng)\r\n    .setDescription(`${kasadancikanlar}`)\r\n    .setFooter(`Kasayı açan (${message.author.username}) | Kasa Fiyatı: 80$ | Kasadan çıkan bütün ürünler sizde kalmaz sadece eğlence için yapılmış bir komutdur`)\r\n    .setColor(\"RANDOM\")\r\n    return message.channel.sendEmbed(embed);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['csgokasa'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'kasaaç',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "! ✮ RolaX ✬ Creed",
+                "date": "2/23/2021"
+            },
+            "v12 PİNG": {
+                "isim": "v12 PİNG",
+                "id": "8RtJOY26cX",
+                "desc": "Bot Pingini Ve Mesaj Gecikmesini Gösterir",
+                "modules": [
+                    "discord.js",
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/690591492330225686/9e9600d3761b3ec891347a6082f8d346.png",
+                "main_code": "const Discord = require(\"discord.js\");\r\nconst db = require(\"quick.db\");\r\nexports.run = async (app, message, client) =&gt; {\r\n  const embed2 = new Discord.MessageEmbed().setDescription(\r\n    \"***Botun pingi hesaplanıyor***\"\r\n  );\r\n  let start = Date.now();\r\n  let mesaj = await message.channel.send(embed2);\r\n  let diff = Date.now() - start;\r\n  let API = app.ws.ping.toFixed(2);\r\n  setInterval(() =&gt; {\r\n    const embed = new Discord.MessageEmbed().setDescription(\r\n      `**BaşkanBot**\\nMesaj gecikme süresi : **${diff}ms**\\nBot gecikme süresi : **${API}ms**`\r\n    );\r\n    mesaj.edit(embed);\r\n  }, 5000);\r\n};\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\nexports.help = {\r\n  name: \"ping\",\r\n  description: \"\",\r\n  usage: \"\"\r\n};",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "! ✮ RolaX ✬ Creed",
+                "date": "2/23/2021"
+            }
+        }
+    }
+]
